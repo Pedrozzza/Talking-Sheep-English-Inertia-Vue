@@ -1,0 +1,9 @@
+{
+    "Reset Password Notification": "Oznámení o změně hesla",
+    "Hello!": "Zdravíme",
+    "You are receiving this email because we received a password reset request for your account." : "Tento e-email jste obdrželi, jelikož jsme dostali žádost o obnovení hesla k Vašemu účtu.",
+    "Reset Password": "Změnit heslo",
+    "This password reset link will expire in :count minutes.": "Platnost tohoto odkazu pro změnu hesla vyprší za :count minut",
+    "If you did not request a password reset, no further action is required.": "Pokud jste o změnu hesla nepožádali, není vyžadována žádná další akce.",
+    "Regards": "S pozdravem"
+}

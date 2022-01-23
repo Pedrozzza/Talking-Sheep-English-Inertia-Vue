@@ -1,0 +1,56 @@
+<template>
+    <welcome-layout :canLogin="canLogin" :canRegister="canRegister" :title="'Kontakty'">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center text-center">
+                <h2 class="mt-16 text-4xl font-extrabold text-blue-800 text-shadow-md">Kontaktní údaje</h2>
+            </div>
+            <div>
+                <p class="my-8 text-2xl font-bold flex justify-center">
+                    Pokud máš zájem o kurz nebo nějaké dotazy, neváhej napsat či zavolat a domluvíme se.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-28 mb-16">
+                <div>
+                    <ul class="text-xl font-bold mb-6">
+                        <li class="mb-4 hover:opacity-50"><a href="mailto:talking.sheep.english@gmail.com"><font-awesome-icon :icon="['fas', 'envelope']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>talking.sheep.english@gmail.com</a></li>
+                        <li class="mb-4 hover:opacity-50"><a href="tel:+420728648959"><font-awesome-icon :icon="['fas', 'mobile-alt']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>(+420) 728 648 959</a></li>
+                        <li class="mb-4"><font-awesome-icon :icon="['fas', 'map-marker-alt']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>Husova 1138, Chrudim 537 01</li>
+                        <li class="mb-4 hover:opacity-50"><a href="https://www.talkingsheepenglish.cz" target="_blank"><font-awesome-icon :icon="['fas', 'globe']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>www.talkingsheepenglish.cz</a></li>
+                    </ul>
+                    <contact-form :title="''" class="w-3/5"></contact-form>
+                </div>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2567.2327553533414!2d15.787704015517509!3d49.950736179409574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dca17cdd132af%3A0xce4f994d2232bc72!2sHusova%201138%2C%20Chrudim%20IV%2C%20537%2001%20Chrudim!5e0!3m2!1scs!2scz!4v1642865172158!5m2!1scs!2scz"
+                            width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </welcome-layout>
+</template>
+
+<script>
+import WelcomeLayout from "../Layouts/WelcomeLayout";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope, faMobileAlt, faMapMarkerAlt, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import ContactForm from "../Components/ContactForm";
+
+
+library.add(faEnvelope, faMobileAlt, faMapMarkerAlt, faGlobe);
+
+export default {
+    name: "Contacts",
+    components: {
+        ContactForm,
+        WelcomeLayout
+    },
+    props: {
+        canLogin: Boolean,
+        canRegister: Boolean
+    }
+}
+</script>
+
+<style scoped>
+
+</style>
