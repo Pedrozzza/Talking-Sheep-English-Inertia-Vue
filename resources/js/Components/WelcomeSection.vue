@@ -3,9 +3,9 @@
     <div class="grid grid-cols-2 gap-8 mx-20">
         <div class="flex items-center justify-center">
             <div class="text-center">
-                <h1 class="text-5xl pb-10 font-extrabold text-blue-800 text-shadow-md">Soukromě, v malý skupince, živě i po skypu.</h1>
-                <h2 class="text-3xl pb-10 font-semibold">Na cesty, na zkoušky, k maturitě i do baru!</h2>
-                <button-secondary class="text-xl shadow-md">Naučím tě English, chceš?</button-secondary>
+                <h1 class="text-5xl pb-10 font-extrabold text-blue-800 text-shadow-md">{{ settings?.data?.hero_main_title ?? 'Soukromě, v malý skupince, živě i po skypu.' }}</h1>
+                <h2 class="text-3xl pb-10 font-semibold">{{ settings?.data?.hero_main_subtitle ?? 'Na cesty, na zkoušky, k maturitě i do baru!' }}</h2>
+                <button-secondary class="text-xl shadow-md">{{ settings?.data?.hero_main_button_title ?? 'Naučím tě English, chceš?' }} </button-secondary>
             </div>
         </div>
         <div class="items-center justify-center m-16 my-32 shadow-lg">
@@ -37,6 +37,12 @@ export default {
         Pagination,
         Navigation,
         ButtonSecondary
+    },
+    props: {
+        settings: {
+            type: Object,
+            default: null
+        },
     },
     data: () => ({
         slides: [

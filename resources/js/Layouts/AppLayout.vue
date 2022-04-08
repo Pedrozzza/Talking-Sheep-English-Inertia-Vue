@@ -13,14 +13,39 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
-                                    <jet-application-mark class="block h-9 w-auto" />
+                                    <jet-application-mark class="block w-auto" />
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                <jet-nav-link :href="route('homeworks.homework-page')" :active="route().current('homeworks.homework-page')">
+                                    Odevzdávárna
+                                </jet-nav-link>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <jet-nav-link v-if="can('edit web')" :href="route('settings.create')" :active="route().current('settings.create')">
+                                    Obsah webu
+                                </jet-nav-link>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <jet-nav-link v-if="can('control lessons')" :href="route('courses.index')" :active="route().current('courses.index')">
+                                    Události
+                                </jet-nav-link>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <jet-nav-link v-if="can('edit web')" :href="route('codes.index')" :active="route().current('codes.index')">
+                                    Registrační kódy
+                                </jet-nav-link>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <jet-nav-link v-if="can('edit web')" :href="route('students.index')" :active="route().current('students.index')">
+                                    Studenti
+                                </jet-nav-link>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <jet-nav-link v-if="can('edit web')" :href="route('homeworks.index')" :active="route().current('homeworks.index')">
+                                    Úkoly
                                 </jet-nav-link>
                             </div>
                         </div>

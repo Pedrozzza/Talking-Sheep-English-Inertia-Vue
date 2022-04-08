@@ -1,8 +1,8 @@
 <template>
     <div class="h-52 bg-gradient-to-b from-red-900 to-red-800">
-        <h1 class="flex justify-center text-6xl pt-20 text-white font-bold">Chrudim a okolí naživo. Online kdekoliv po ČR</h1>
+        <h1 class="flex justify-center text-6xl pt-20 text-white font-bold">{{ settings?.data?.hero_main_card_title ?? 'Chrudim a okolí naživo. Online kdekoliv po ČR' }}</h1>
     </div>
-    <tabs></tabs>
+    <tabs :settings="settings"></tabs>
     <div class="bg-split-white-red flex justify-center items-center">
         <div class="container">
             <div class="pb-8 grid grid-cols-3 gap-4">
@@ -29,6 +29,12 @@ export default {
     components: {
         ContactForm,
         Tabs,
+    },
+    props: {
+        settings: {
+            type: Object,
+            default: null
+        },
     },
 
 }

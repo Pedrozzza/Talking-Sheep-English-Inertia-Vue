@@ -23,7 +23,7 @@
                         Spousta lidí to ale neudělá, i když je to láká, a častou výmluvou je “Neumím anglicky.”
                     <br>
                     <br>
-                        Prozradím ti tajemství. Taky jsem neuměla anglicky. Na základce mě angičtina nebavila a nosila
+                        Prozradím ti tajemství. Taky jsem neuměla anglicky. Na základce mě angličtina nebavila a nosila
                         jsem domů od dvojek až po čtverce. Na střední jsem stále ještě učení se jazyku moc pozornosti
                         nevěnovala, protože jsem měla pocit, že mi to stejně nikdy nepůjde nějak vyjímečně, a že to
                         nebudu stejně nikdy potřebovat. Představovala jsem si, že na to, aby člověk uměl mluvit dobře

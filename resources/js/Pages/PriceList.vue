@@ -2,11 +2,11 @@
     <welcome-layout :canLogin="canLogin" :canRegister="canRegister" :title="'Ceník'">
         <div class="container mx-auto px-4">
             <div class="flex justify-center text-center">
-                <h2 class="mt-16 text-4xl font-extrabold text-blue-800 text-shadow-md">Kolik zaplatíš?</h2>
+                <h2 class="mt-16 text-4xl font-extrabold text-blue-800 text-shadow-md">{{ settings?.data?.price_main_title ?? 'Kolik zaplatíš?' }}</h2>
             </div>
             <div>
                 <p class="my-8 text-2xl font-bold flex justify-center">
-                    Záleží hlavně na tvých preferencích a času, který se rozhodneš investovat. V tabulkách najdeš moje ceny, včetně možných slev.
+                    {{ settings?.data?.price_main_subtitle ?? 'Záleží hlavně na tvých preferencích a času, který se rozhodneš investovat. V tabulkách najdeš moje ceny, včetně možných slev.' }}
                 </p>
             </div>
             <div class="grid grid-cols-2 gap-28 items-start">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="p-10">
-                    <img :src="'../../storage/pricelist-photos/pricelist1.jpg'" alt="talking sheep english">
+                    <img :src="settings?.data?.price_photo ?? '../../storage/pricelist-photos/pricelist1.jpg'" alt="talking sheep english">
                 </div>
             </div>
         </div>
@@ -42,7 +42,8 @@ export default {
     },
     props: {
         canLogin: Boolean,
-        canRegister: Boolean
+        canRegister: Boolean,
+        settings: Object,
     }
 }
 </script>

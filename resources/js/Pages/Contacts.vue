@@ -2,20 +2,20 @@
     <welcome-layout :canLogin="canLogin" :canRegister="canRegister" :title="'Kontakty'">
         <div class="container mx-auto px-4">
             <div class="flex justify-center text-center">
-                <h2 class="mt-16 text-4xl font-extrabold text-blue-800 text-shadow-md">Kontaktní údaje</h2>
+                <h2 class="mt-16 text-4xl font-extrabold text-blue-800 text-shadow-md">{{ settings?.data?.contact_main_title ?? 'Kontaktní údaje' }}</h2>
             </div>
             <div>
                 <p class="my-8 text-2xl font-bold flex justify-center">
-                    Pokud máš zájem o kurz nebo nějaké dotazy, neváhej napsat či zavolat a domluvíme se.
+                    {{ settings?.data?.contact_main_subtitle ?? 'Pokud máš zájem o kurz nebo nějaké dotazy, neváhej napsat či zavolat a domluvíme se.' }}
                 </p>
             </div>
             <div class="grid grid-cols-2 gap-28 mb-16">
                 <div>
                     <ul class="text-xl font-bold mb-6">
-                        <li class="mb-4 hover:opacity-50"><a href="mailto:talking.sheep.english@gmail.com"><font-awesome-icon :icon="['fas', 'envelope']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>talking.sheep.english@gmail.com</a></li>
-                        <li class="mb-4 hover:opacity-50"><a href="tel:+420728648959"><font-awesome-icon :icon="['fas', 'mobile-alt']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>(+420) 728 648 959</a></li>
-                        <li class="mb-4"><font-awesome-icon :icon="['fas', 'map-marker-alt']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>Husova 1138, Chrudim 537 01</li>
-                        <li class="mb-4 hover:opacity-50"><a href="https://www.talkingsheepenglish.cz" target="_blank"><font-awesome-icon :icon="['fas', 'globe']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>www.talkingsheepenglish.cz</a></li>
+                        <li class="mb-4 hover:opacity-50"><a href=""><font-awesome-icon :icon="['fas', 'envelope']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>{{ settings?.data?.contact_email ?? 'talking.sheep.english@gmail.com' }}</a></li>
+                        <li class="mb-4 hover:opacity-50"><a href=""><font-awesome-icon :icon="['fas', 'mobile-alt']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>{{ settings?.data?.contact_phone ?? '(+420) 728 648 959' }}</a></li>
+                        <li class="mb-4"><font-awesome-icon :icon="['fas', 'map-marker-alt']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>{{ settings?.data?.contact_address ?? 'Husova 1138, Chrudim 537 01' }}</li>
+                        <li class="mb-4 hover:opacity-50"><a :href="'https://' + settings?.data?.contact_website ?? 'www.talkingsheepenglish.cz'" target="_blank"><font-awesome-icon :icon="['fas', 'globe']" size="lg" class="mr-4 text-blue-800" style="width: 30px"/>{{ settings?.data?.contact_website ?? 'www.talkingsheepenglish.cz' }}</a></li>
                     </ul>
                     <contact-form :title="''" class="w-3/5"></contact-form>
                 </div>
@@ -46,7 +46,8 @@ export default {
     },
     props: {
         canLogin: Boolean,
-        canRegister: Boolean
+        canRegister: Boolean,
+        settings: Object,
     }
 }
 </script>

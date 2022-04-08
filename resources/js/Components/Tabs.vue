@@ -8,29 +8,29 @@
                          :class="{ 'bg-red-700 text-white text-3xl border-l-8 border-t-8 border-r-8 sm:rounded-tl-lg sm:rounded-tr-lg border-white' : show_tab1, 'text-gray-300' : !show_tab1 }"
                     >
                         <font-awesome-icon :icon="['fas', 'user-graduate']" size="lg" class="mb-4"/>
-                        <p class="hide-sm">Co nabízím?</p>
+                        <p class="hide-sm">{{ settings?.data?.hero_first_card_title ?? 'Co nabízím?' }}</p>
                     </div>
                     <div @click="tab2"
                          class="py-8 cursor-pointer transition-all duration-150 ease-in-out hover:bg-red-700 hover:text-white text-3xl hover:border-l-8 hover:border-t-8 hover:border-r-8 hover:sm:rounded-tl-lg hover:sm:rounded-tr-lg hover:border-white"
                          :class="{ 'bg-red-700 text-white text-3xl border-l-8 border-t-8 border-r-8 sm:rounded-tl-lg sm:rounded-tr-lg border-white' : show_tab2, 'text-gray-300' : !show_tab2 }"
                     >
                         <font-awesome-icon :icon="['fas', 'undo']" size="lg" class="mb-4"/>
-                        <p class="hide-sm">Co když mně to nesedne?</p>
+                        <p class="hide-sm">{{ settings?.data?.hero_second_card_title ?? 'Co když mně to nesedne?' }}</p>
                     </div>
                     <div @click="tab3"
                          class="py-8 cursor-pointer transition-all duration-150 ease-in-out hover:bg-red-700 hover:text-white text-3xl hover:border-l-8 hover:border-t-8 hover:border-r-8 hover:sm:rounded-tl-lg hover:sm:rounded-tr-lg hover:border-white"
                          :class="{ 'bg-red-700 text-white text-3xl border-l-8 border-t-8 border-r-8 sm:rounded-tl-lg sm:rounded-tr-lg border-white' : show_tab3, 'text-gray-300' : !show_tab3 }"
                     >
                         <font-awesome-icon :icon="['fas', 'coins']" size="lg" class="mb-4"/>
-                        <p class="hide-sm">Kolik zaplatím?</p>
+                        <p class="hide-sm">{{ settings?.data?.hero_third_card_title ?? 'Kolik zaplatím?' }}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div>
-            <tab1 v-if="show_tab1"></tab1>
-            <tab2 v-if="show_tab2"></tab2>
-            <tab3 v-if="show_tab3"></tab3>
+            <tab1 v-if="show_tab1" :settings="settings"></tab1>
+            <tab2 v-if="show_tab2" :settings="settings"></tab2>
+            <tab3 v-if="show_tab3" :settings="settings"></tab3>
         </div>
 
     </div>
@@ -57,6 +57,12 @@ export default {
         Tab1,
         Tab2,
         Tab3
+    },
+    props: {
+        settings: {
+            type: Object,
+            default: null
+        },
     },
     data: () => ({
         show_tab1: true,

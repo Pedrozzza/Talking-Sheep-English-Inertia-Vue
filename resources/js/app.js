@@ -5,6 +5,7 @@ import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import * as ValidationRules from './validationRules';
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import LaravelPermissionToVueJS from 'laravel-permission-to-vuejs';
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -15,6 +16,7 @@ createInertiaApp({
         return createApp({ render: () => h(app, props) })
             .use(ValidationRules)
             .use(plugin)
+            .use(LaravelPermissionToVueJS)
             .component('font-awesome-icon', FontAwesomeIcon)
             .mixin({ methods: { route } })
             .mount(el);

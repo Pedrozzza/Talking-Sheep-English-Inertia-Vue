@@ -3,7 +3,7 @@
         <div class="container">
             <div id="tab-3-content" class="grid grid-cols-2 gap-36">
                 <div class="self-center">
-                    <h1 class="text-black text-3xl font-bold mb-12">Individuální výuka přináší čas jen pro tebe. Skupinová výuka je fajn pro potkávání dalších studentů a prostřídání parťáků se kterými během lekce mluvíš. Volba je jen na tobě.</h1>
+                    <h1 class="text-black text-3xl font-bold mb-12">{{ settings?.data?.hero_third_card_text1 ?? 'Individuální výuka přináší čas jen pro tebe. Skupinová výuka je fajn pro potkávání dalších studentů a prostřídání parťáků se kterými během lekce mluvíš. Volba je jen na tobě.' }}</h1>
                     <div class="flex flex-col">
                         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -40,7 +40,13 @@ export default {
     components: {
         DiscountPriceList,
         BasicPriceList
-    }
+    },
+    props: {
+    settings: {
+      type: Object,
+      default: null
+    },
+  },
 }
 </script>
 

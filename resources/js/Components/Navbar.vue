@@ -7,7 +7,7 @@
                         <jet-application-mark class="block w-auto mr-2" />
                     </Link>
                     <li class="p-2 hover:opacity-50"><Link :href="route('info')">Informace</Link></li>
-                    <li class="p-2 hover:opacity-50"><Link :href="route('courses')">Kurzy</Link></li>
+                    <li class="p-2 hover:opacity-50"><Link :href="route('courses')">Události</Link></li>
                     <li class="p-2 hover:opacity-50"><Link :href="route('about')">O Lektorce</Link></li>
                     <li class="p-2 hover:opacity-50"><Link :href="route('price_list')">Ceník</Link></li>
                     <li class="p-2 hover:opacity-50"><Link :href="route('contacts')">Kontakty</Link></li>

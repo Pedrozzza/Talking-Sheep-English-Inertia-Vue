@@ -2,8 +2,8 @@
     <Head title="Vítejte" />
 
     <welcome-layout :canLogin="canLogin" :canRegister="canRegister" :title="'Vítejte'">
-        <welcome-section></welcome-section>
-        <info-section></info-section>
+        <welcome-section :settings="settings"></welcome-section>
+        <info-section :settings="settings"></info-section>
     </welcome-layout>
 
 <!--    <div class="relative flex items-top justify-center min-h-screen bg-white dark:bg-gray-900 sm:items-center sm:pt-0">-->
@@ -48,6 +48,7 @@
             canRegister: Boolean,
             laravelVersion: String,
             phpVersion: String,
+            settings: Object,
         }
     })
 </script>

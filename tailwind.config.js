@@ -20,6 +20,9 @@ module.exports = {
                 '184': '46rem',
                 '160': '40rem',
             },
+            width: {
+                '134': '34rem',
+            },
             backgroundImage: {
                 'split-white-red': 'linear-gradient(to bottom, white 50%, #991b1b 50%)'
             }
