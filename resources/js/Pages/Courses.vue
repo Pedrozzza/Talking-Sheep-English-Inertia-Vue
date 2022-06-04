@@ -15,8 +15,8 @@
                         <div class="flex justify-center">
                             <div class="rounded-lg shadow-lg bg-white max-w-sm">
                                 <a href="#!">
-                                    <img v-if="course.image" class="w-full rounded-t-lg" :src="`../../storage/courses-photos/${course.image}`" alt="" style="max-height: 225px"/>
-                                    <img v-else class="w-full rounded-t-lg" :src="`../../storage/default-photo/default-photo.png`" alt="" style="max-height: 225px"/>
+                                    <img v-if="course.image" class="w-full rounded-t-lg" :src="`../../storage/courses-photos/${course.image}`" alt="" style="max-height: 185px"/>
+                                    <img v-else class="w-full rounded-t-lg" :src="`../../storage/default-photo/default-photo.png`" alt="" style="max-height: 185px"/>
                                 </a>
                                 <div class="p-6">
                                     <h5 class="text-blue-800 text-center text-xl font-bold mb-2">{{ course.title }}</h5>

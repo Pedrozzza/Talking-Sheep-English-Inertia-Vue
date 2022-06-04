@@ -20,7 +20,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="code in codes" :key="code.id" class="border">
+                <tr v-for="code in codes" :key="code.id" class="border hover:bg-blue-100">
                     <td class="text-gray-900 px-4 py-4 whitespace-nowrap">{{ code.code }}</td>
                     <td class="text-center text-gray-900 px-4 py-4 whitespace-nowrap flex justify-center">
                         <button @click.prevent="removeCode(code.id)">

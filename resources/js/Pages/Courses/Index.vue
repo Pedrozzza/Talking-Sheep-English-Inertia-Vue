@@ -33,7 +33,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="course in courses.data" :key="course.id" class="border">
+                            <tr v-for="course in courses.data" :key="course.id" class="border hover:bg-blue-100">
                                 <td class="text-gray-900 px-6 py-4 whitespace-nowrap">{{ course.title }}</td>
                                 <td class="text-center text-gray-900 px-6 py-4 whitespace-nowrap">{{ course.created_at_for_human }}</td>
                                 <td class="text-center text-gray-900 px-6 py-4 whitespace-nowrap">
@@ -44,7 +44,7 @@
                                 </td>
                                 <td class="text-center text-gray-900 px-6 py-4 whitespace-nowrap flex justify-center">
                                     <edit-btn :url="route('courses.edit', { course: course.id })" class="mr-4"></edit-btn>
-                                    <delete-btn :url="('courseroutes.delete', { course: course.id })" :model-name="course.title"></delete-btn>
+                                    <delete-btn :url="route('courses.delete', { course: course.id })" :model-name="course.title"></delete-btn>
                                 </td>
                             </tr>
                         </tbody>

@@ -1,33 +1,31 @@
 <template>
     <jet-action-section>
         <template #title>
-            Delete Account
+            Smazat účet
         </template>
 
         <template #description>
-            Permanently delete your account.
+            Trvale smažte svůj účet.
         </template>
 
         <template #content>
             <div class="max-w-xl text-sm text-gray-600">
-                Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.
+                Jakmile bude váš účet smazán, budou trvale smazány všechny jeho zdroje a data. Před smazáním účtu si prosím stáhněte všechna data nebo informace, které si přejete zachovat.
             </div>
-
             <div class="mt-5">
                 <jet-danger-button @click="confirmUserDeletion">
-                    Delete Account
+                    Smazat účet
                 </jet-danger-button>
             </div>
 
             <!-- Delete Account Confirmation Modal -->
             <jet-dialog-modal :show="confirmingUserDeletion" @close="closeModal">
                 <template #title>
-                    Delete Account
+                    Smazat účet
                 </template>
 
                 <template #content>
-                    Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.
-
+                    Opravdu chcete smazat svůj účet? Jakmile bude váš účet smazán, budou trvale smazány všechny jeho zdroje a data. Zadejte prosím své heslo pro potvrzení, že chcete trvale smazat svůj účet.
                     <div class="mt-4">
                         <jet-input type="password" class="mt-1 block w-3/4" placeholder="Password"
                                     ref="password"
@@ -40,11 +38,11 @@
 
                 <template #footer>
                     <jet-secondary-button @click="closeModal">
-                        Cancel
+                        Zrušit
                     </jet-secondary-button>
 
                     <jet-danger-button class="ml-2" @click="deleteUser" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                        Delete Account
+                        Opravdu smazat účet
                     </jet-danger-button>
                 </template>
             </jet-dialog-modal>

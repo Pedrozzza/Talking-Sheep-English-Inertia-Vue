@@ -33,7 +33,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="homework in homeworks.data" :key="homework.id" class="border">
+                        <tr v-for="homework in homeworks.data" :key="homework.id" class="border hover:bg-blue-100">
                             <td class="text-gray-900 px-6 py-4 whitespace-nowrap">{{ homework.user_id }}</td>
                             <td class="text-gray-900 px-6 py-4 whitespace-nowrap">{{ homework.name }}</td>
                             <td class="text-gray-900 px-6 py-4 whitespace-nowrap">{{ homework.homework_number }}</td>

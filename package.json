@@ -27,6 +27,8 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^33.0.0",
+        "@ckeditor/ckeditor5-vue": "^3.0.0",
         "@fortawesome/fontawesome-svg-core": "^1.2.36",
         "@fortawesome/free-brands-svg-icons": "^5.15.4",
         "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -37,6 +39,7 @@
         "moment": "^2.29.1",
         "sweetalert2": "^11.3.3",
         "vee-validate": "^4.5.6",
+        "vue-accessible-color-picker": "^4.0.0",
         "vue-carousel": "^0.18.0",
         "vue-video-player": "^5.0.2",
         "vue3-carousel": "^0.1.34",

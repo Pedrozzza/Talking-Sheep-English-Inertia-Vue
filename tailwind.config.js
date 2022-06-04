@@ -22,9 +22,22 @@ module.exports = {
             },
             width: {
                 '134': '34rem',
+                '256': '64rem'
             },
             backgroundImage: {
                 'split-white-red': 'linear-gradient(to bottom, white 50%, #991b1b 50%)'
+            },
+            borderWidth: {
+                DEFAULT: '1px',
+                '0': '0',
+                '2': '2px',
+                '3': '3px',
+                '4': '4px',
+                '6': '6px',
+                '8': '8px',
+            },
+            colors: {
+                'logo-blue': '#3472df',
             }
         },
     },

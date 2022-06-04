@@ -9,12 +9,12 @@
                     {{ settings?.data?.info_main_subtitle ?? 'Volba je především na tobě a tvých preferencí. S rozhodováním ti mohou pomoci následující informace rozdělené dle kategorií.' }}
                 </p>
             </div>
-            <div class="flex justify-between px-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 md:gap-4 xl:gap-12">
                 <card>
                     <div class="flex justify-center">
                         <div class="rounded-lg shadow-lg bg-white max-w-sm">
                             <a href="#!">
-                                <img class="rounded-t-lg" src="../../img/info_cards/card1.png" alt=""/>
+                                <img class="rounded-t-lg" src="../../img/info_cards/card1.jpg" alt="Anglictina Chrudim"/>
                             </a>
                             <div class="p-6">
                                 <h5 class="text-blue-800 text-center text-xl font-bold mb-2">{{ settings?.data?.info_first_card_title ?? 'NA ŽIVO / ONLINE' }}</h5>
@@ -31,7 +31,7 @@
                     <div class="flex justify-center">
                         <div class="rounded-lg shadow-lg bg-white max-w-sm">
                             <a href="#!">
-                                <img class="rounded-t-lg" src="../../img/info_cards/card2.png" alt=""/>
+                                <img class="rounded-t-lg" src="../../img/info_cards/card2.jpg" alt="Anglictina Chrudim"/>
                             </a>
                             <div class="p-6">
                                 <h5 class="text-blue-800 text-center text-xl font-bold mb-2">{{ settings?.data?.info_second_card_title ?? 'NA POHODU / INTENZIVNĚ' }}</h5>
@@ -48,7 +48,7 @@
                     <div class="flex justify-center">
                         <div class="rounded-lg shadow-lg bg-white max-w-sm">
                             <a href="#!">
-                                <img class="rounded-t-lg" src="../../img/info_cards/card3.png" alt=""/>
+                                <img class="rounded-t-lg" src="../../img/info_cards/card3.jpg" alt="Anglictina Chrudim"/>
                             </a>
                             <div class="p-6">
                                 <h5 class="text-blue-800 text-center text-xl font-bold mb-2">{{ settings?.data?.info_third_card_title ?? 'INDIVIDUÁLNĚ / VE SKUPINĚ' }}</h5>
@@ -56,6 +56,23 @@
                                     {{ settings?.data?.info_third_card_text1 ?? 'Výhodou individuální výuky je především to, že celý čas výuky je věnovaný tobě. Intenzita je tedy daleko větší než během výuky ve skupině a progres učení a pochopení problematiky je rychlejší. Také je větší prostor se zaměřit především na ty situace, kde nejvíce chybuješ. Lekce jsou tedy více šité na míru.' }}
                                     <br><br>
                                     {{ settings?.data?.info_third_card_text2 ?? 'Výhodou skupinové výuky může být naopak větší motivace díky ostatním studentům. Lekce bývají také maličko zajímavější a zábavnější formou a učení tak může jít někdy snáze. Samozřejmostí je také, že poznáš nové parťáky a procvičíš si konverzace, které jsou ve větší skupince rozmanitější.' }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </card>
+                <card>
+                    <div class="flex justify-center">
+                        <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                            <a href="#!">
+                                <img class="rounded-t-lg" src="../../img/info_cards/card4.jpg" alt="Anglictina Chrudim"/>
+                            </a>
+                            <div class="p-6">
+                                <h5 class="text-blue-800 text-center text-xl font-bold mb-2">{{ settings?.data?.info_fourth_card_title ?? 'DOSPĚLÍ / DĚTI' }}</h5>
+                                <p class="text-gray-700 text-justify text-base mb-4">
+                                    {{ settings?.data?.info_fourth_card_text1 ?? '' }}
+                                    <br><br>
+                                    {{ settings?.data?.info_fourth_card_text2 ?? '' }}
                                 </p>
                             </div>
                         </div>

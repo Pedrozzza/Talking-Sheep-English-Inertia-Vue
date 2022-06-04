@@ -41,6 +41,7 @@ class SettingController extends Controller
             'hero_second_card_text2' => 'required|string',
             'hero_third_card_title' => 'required|string',
             'hero_third_card_text1' => 'required|string',
+            'hero_third_card_text2' => 'required|string',
         ]);
 
         $data['hero_main_title'] = $request->get('hero_main_title');
@@ -56,6 +57,7 @@ class SettingController extends Controller
         $data['hero_second_card_text2'] = $request->get('hero_second_card_text2');
         $data['hero_third_card_title'] = $request->get('hero_third_card_title');
         $data['hero_third_card_text1'] = $request->get('hero_third_card_text1');
+        $data['hero_third_card_text2'] = $request->get('hero_third_card_text2');
 
 
         if($request->has('hero_second_card_photo')) {
@@ -93,6 +95,9 @@ class SettingController extends Controller
             'info_third_card_title' => 'required|string',
             'info_third_card_text1' => 'required|string',
             'info_third_card_text2' => 'required|string',
+            'info_fourth_card_title' => 'required|string',
+            'info_fourth_card_text1' => 'required|string',
+            'info_fourth_card_text2' => 'required|string',
         ]);
 
         $data['info_main_title'] = $request->get('info_main_title');
@@ -107,6 +112,9 @@ class SettingController extends Controller
         $data['info_third_card_title'] = $request->get('info_third_card_title');
         $data['info_third_card_text1'] = $request->get('info_third_card_text1');
         $data['info_third_card_text2'] = $request->get('info_third_card_text2');
+        $data['info_fourth_card_title'] = $request->get('info_fourth_card_title');
+        $data['info_fourth_card_text1'] = $request->get('info_fourth_card_text1');
+        $data['info_fourth_card_text2'] = $request->get('info_fourth_card_text2');
 
         $this->save($data);
 

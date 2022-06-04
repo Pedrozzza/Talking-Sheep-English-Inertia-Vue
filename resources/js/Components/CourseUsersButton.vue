@@ -25,7 +25,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-for="user in course.users" :key="user.id" class="border">
+                                <tr v-for="user in course.users" :key="user.id" class="border hover:bg-blue-100">
                                     <td class="text-gray-900 px-6 py-4 whitespace-nowrap">{{ user.name }}</td>
                                     <td class="text-gray-900 px-6 py-4 pr-12 whitespace-nowrap flex justify-end">
                                         <button @click.prevent="removeUser(user.id)">

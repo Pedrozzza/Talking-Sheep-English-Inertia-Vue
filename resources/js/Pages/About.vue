@@ -8,13 +8,7 @@
                 <img :src="'../../storage/about-photos/lector.jpg'" alt="talking sheep english" class="shadow-xl rounded-xl float-left mb-4 mr-8" style="width: 556px">
                 <div class="text-xl font-bold text-justify">
                     <p>
-                        Jmenuju se Moni a žila jsem pár let v zahraničí. Učit mě baví, a baví mě kontakt s lidmi.
-                        A najdu ty nejšílenější způsoby, jak zapříčinit, aby to bavilo i tebe! Především budeme MLUVIT
-                        Bude to jiné, bude to nové, bude to trhlé a neotřelé. Bude to sranda a navíc si z toho budeš
-                        hodně věcí pamatovat! Učíme se, hrajeme hry, a kombinujeme bláznivé věci s neuvěřitelnými,
-                        protože čím větší šílenost, tím pro mozek zapamatovatelnější.
-                    <br>
-                    <br>
+                        Jmenuji se Monika a mám za sebou pár let života na cestách.
                         Nejdříve jsem 2 roky žila v Anglii, konrétně v Lake District. Pak jsem si střihla ještě rok na
                         Novým Zelí. V mezičase jsem si ze Zelíčka odskočila na měsíc na Filipíny, a později, po cestě
                         zpět domů jsem to vzala ještě přes pár metropolitních zastávek včetně jednoho měsíce ve Vietnamu.
@@ -27,8 +21,8 @@
                         jsem domů od dvojek až po čtverce. Na střední jsem stále ještě učení se jazyku moc pozornosti
                         nevěnovala, protože jsem měla pocit, že mi to stejně nikdy nepůjde nějak vyjímečně, a že to
                         nebudu stejně nikdy potřebovat. Představovala jsem si, že na to, aby člověk uměl mluvit dobře
-                        cizím jazykem se musí prostě narodit extra chytrej, nebo mít nějaký superschopnosti komiksových
-                        hrdinů. Ani ve snu mě tehdy nenapadlo, že budu jednou celkem bez obav cestovat po celým světě,
+                        cizím jazykem, by musel mít nějaký superschopnosti komiksových hrdinů.
+                        Ani ve snu mě tehdy nenapadlo, že budu jednou hovořit plynule, celkem bez obav cestovat po celým světě,
                         žít a pracovat v zahraničí, natož že bych někdy mohla angličtinu učit.
                     <br>
                     <br>
@@ -85,7 +79,7 @@
                         <br>
                         <br>
                             Je důležitý se přestat bát promluvit. A pak se věci začnou dít. Díky tomu, že jsem se vydala
-                            do zahraničí a donutila se tak mluvit, i přesto že to tehdy zdaleka ještě nebylo perfetní,
+                            do zahraničí a donutila se tak mluvit, i přesto že to tehdy zdaleka ještě nebylo perfektní,
                             jsem zažila spoustu neuvěřitelně úžasných věcí. Ale o tom si můžeme vyprávět později,
                             v angličtině, naživo.
                         </p>

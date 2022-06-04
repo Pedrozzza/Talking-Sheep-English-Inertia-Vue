@@ -19,9 +19,9 @@
                     </ul>
                     <contact-form :title="''" class="w-3/5"></contact-form>
                 </div>
-                <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2567.2327553533414!2d15.787704015517509!3d49.950736179409574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dca17cdd132af%3A0xce4f994d2232bc72!2sHusova%201138%2C%20Chrudim%20IV%2C%20537%2001%20Chrudim!5e0!3m2!1scs!2scz!4v1642865172158!5m2!1scs!2scz"
-                            width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy">
+                <div class="flex justify-center items-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41078.76085651689!2d15.771031989378978!3d49.94717550277093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dc9f57d62f68d%3A0x400af0f6614e7d0!2sChrudim!5e0!3m2!1scs!2scz!4v1654350570889!5m2!1scs!2scz"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
             </div>

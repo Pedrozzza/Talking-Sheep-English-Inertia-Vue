@@ -1,25 +1,25 @@
 <template>
     <div>
-        <div class="bg-red-800 flex justify-center items-center text-center">
+        <div id="tabs" class="bg-red-800 flex justify-center items-center text-center pt-2">
             <div class="container">
-                <div class="grid grid-cols-3 gap-4">
+                <div class="grid grid-cols-3 md:gap-4">
                     <div @click="tab1"
-                         class="py-8 cursor-pointer transition-all duration-150 ease-in-out hover:bg-red-700 hover:text-white text-3xl hover:border-l-8 hover:border-t-8 hover:border-r-8 hover:sm:rounded-tl-lg hover:sm:rounded-tr-lg hover:border-white"
-                         :class="{ 'bg-red-700 text-white text-3xl border-l-8 border-t-8 border-r-8 sm:rounded-tl-lg sm:rounded-tr-lg border-white' : show_tab1, 'text-gray-300' : !show_tab1 }"
+                         class="py-8 cursor-pointer transition-all duration-150 ease-in-out hover:bg-red-700 hover:text-white text-base md:text-3xl hover:border-l-4 hover:border-t-4 hover:border-r-4 md:hover:border-l-8 md:hover:border-t-8 md:hover:border-r-8 hover:sm:rounded-tl-lg hover:sm:rounded-tr-lg hover:border-white"
+                         :class="{ 'bg-red-700 text-white text-base md:text-3xl border-l-4 border-t-4 border-r-4 md:border-l-8 md:border-t-8 md:border-r-8 sm:rounded-tl-lg sm:rounded-tr-lg border-white' : show_tab1, 'text-gray-300' : !show_tab1 }"
                     >
-                        <font-awesome-icon :icon="['fas', 'user-graduate']" size="lg" class="mb-4"/>
+                        <font-awesome-icon :icon="['fas', 'cog']" size="lg" class="mb-4"/>
                         <p class="hide-sm">{{ settings?.data?.hero_first_card_title ?? 'Co nabízím?' }}</p>
                     </div>
                     <div @click="tab2"
-                         class="py-8 cursor-pointer transition-all duration-150 ease-in-out hover:bg-red-700 hover:text-white text-3xl hover:border-l-8 hover:border-t-8 hover:border-r-8 hover:sm:rounded-tl-lg hover:sm:rounded-tr-lg hover:border-white"
-                         :class="{ 'bg-red-700 text-white text-3xl border-l-8 border-t-8 border-r-8 sm:rounded-tl-lg sm:rounded-tr-lg border-white' : show_tab2, 'text-gray-300' : !show_tab2 }"
+                         class="py-8 cursor-pointer transition-all duration-150 ease-in-out hover:bg-red-700 hover:text-white text-base md:text-3xl hover:border-l-4 hover:border-t-4 hover:border-r-4 md:hover:border-l-8 md:hover:border-t-8 md:hover:border-r-8 hover:sm:rounded-tl-lg hover:sm:rounded-tr-lg hover:border-white"
+                         :class="{ 'bg-red-700 text-white text-base md:text-3xl border-l-4 border-t-4 border-r-4 md:border-l-8 md:border-t-8 md:border-r-8 sm:rounded-tl-lg sm:rounded-tr-lg border-white' : show_tab2, 'text-gray-300' : !show_tab2 }"
                     >
-                        <font-awesome-icon :icon="['fas', 'undo']" size="lg" class="mb-4"/>
+                      <font-awesome-icon :icon="['fas', 'user-graduate']" size="lg" class="mb-4"/>
                         <p class="hide-sm">{{ settings?.data?.hero_second_card_title ?? 'Co když mně to nesedne?' }}</p>
                     </div>
                     <div @click="tab3"
-                         class="py-8 cursor-pointer transition-all duration-150 ease-in-out hover:bg-red-700 hover:text-white text-3xl hover:border-l-8 hover:border-t-8 hover:border-r-8 hover:sm:rounded-tl-lg hover:sm:rounded-tr-lg hover:border-white"
-                         :class="{ 'bg-red-700 text-white text-3xl border-l-8 border-t-8 border-r-8 sm:rounded-tl-lg sm:rounded-tr-lg border-white' : show_tab3, 'text-gray-300' : !show_tab3 }"
+                         class="py-8 cursor-pointer transition-all duration-150 ease-in-out hover:bg-red-700 hover:text-white text-base md:text-3xl hover:border-l-4 hover:border-t-4 hover:border-r-4 md:hover:border-l-8 md:hover:border-t-8 md:hover:border-r-8 hover:sm:rounded-tl-lg hover:sm:rounded-tr-lg hover:border-white"
+                         :class="{ 'bg-red-700 text-white text-base md:text-3xl border-l-4 border-t-4 border-r-4 md:border-l-8 md:border-t-8 md:border-r-8 sm:rounded-tl-lg sm:rounded-tr-lg border-white' : show_tab3, 'text-gray-300' : !show_tab3 }"
                     >
                         <font-awesome-icon :icon="['fas', 'coins']" size="lg" class="mb-4"/>
                         <p class="hide-sm">{{ settings?.data?.hero_third_card_title ?? 'Kolik zaplatím?' }}</p>
@@ -38,7 +38,7 @@
 
 <script>
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faUserClock, faUsersCog, faCoins, faUserGraduate, faUndo } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faUserClock, faUsersCog, faCoins, faUserGraduate, faCog } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
     faFacebook,
@@ -48,7 +48,7 @@ import Tab1 from "./Tabs/Tab1";
 import Tab2 from "./Tabs/Tab2";
 import Tab3 from "./Tabs/Tab3";
 
-library.add(faBars, faUserClock, faTwitter, faUsersCog, faCoins, faFacebook, faUserGraduate, faUndo);
+library.add(faBars, faUserClock, faTwitter, faUsersCog, faCoins, faFacebook, faUserGraduate, faCog);
 
 export default {
     name: "Tabs",

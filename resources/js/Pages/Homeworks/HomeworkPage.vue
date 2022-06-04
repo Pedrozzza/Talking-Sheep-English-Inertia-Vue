@@ -1,17 +1,15 @@
 <template>
     <app-layout title="Odevzdávárna">
         <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            <div class="px-4 sm:max-w-3xl mx-auto py-10 sm:px-6 lg:px-8">
                 <div class="p-6 bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="flex flex-col items-center">
-                        <h2 class="my-4 text-4xl font-extrabold text-blue-800 text-shadow-md">Na tomto místě můžete odevzdat své úkoly</h2>
-                        <h3 class="text-xl font-bold">Vyplňte číslo úkolu, vyberte soubor a kliknutím na tlačítko "ODEVZDAT ÚKOL" odešlete.</h3>
-<!--                        <h3 class="text-xl font-bold">Po vyhodnocení budete informováni o výsledku.</h3>-->
-<!--                        <h3 class="text-xl font-bold">Odevzdané úkoly a hodnocení naleznete v sekci "Mé úkoly" nahoře v menu.</h3>-->
+                    <div class="flex flex-col">
+                        <h2 class="my-4 text-2xl font-extrabold text-blue-800 text-shadow-md">Na tomto místě můžete odevzdat své úkoly</h2>
+                        <p class="text-base">Vyplňte číslo úkolu, vyberte soubor a kliknutím na tlačítko "ODEVZDAT ÚKOL" odešlete.</p>
                     </div>
 
-                    <div class="mt-8 justify-center flex">
-                        <div class="px-6 py-4 bg-red-800 w-1/2 shadow-md overflow-hidden sm:rounded-lg border-4 border-red-900">
+                    <div class="mt-8">
+                        <div class="px-6 py-4 bg-blue-800 shadow-md overflow-hidden rounded sm:rounded-lg border-2 border-blue-900">
                             <div class="flex flex-col text-white">
                                 <small>Podporované formáty: pfd, doc, docx, jpg, png</small>
                                 <small>Maximální velikost souboru: 10 MB</small>
@@ -20,7 +18,7 @@
                             <Form @submit="submit" enctype="multipart/form-data">
 
                                 <div class="mt-4">
-                                    <Field name="homework_number" id="homework_number" type="number" placeholder="Číslo úkolu *" class="mt-1 block w-full placeholder-italic border border-red-900" v-model="form.homework_number" :rules="'required'"/>
+                                    <Field name="homework_number" id="homework_number" type="number" placeholder="Číslo úkolu *" class="mt-1 block w-full placeholder-italic border border-blue-900" v-model="form.homework_number" :rules="'required'"/>
                                     <error-message class="text-sm text-white font-extrabold" name="homework_number"></error-message>
                                 </div>
 
@@ -35,7 +33,7 @@
                                     font-normal
                                     text-gray-700
                                     bg-white bg-clip-padding
-                                    border border-red-900
+                                    border border-blue-900
                                     transition
                                     ease-in-out
                                     m-0"
@@ -43,9 +41,9 @@
                                     <error-message class="text-sm text-white font-extrabold" name="file"></error-message>
                                 </div>
 
-                                <button-reverse class="mt-4 float-right" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                                <button-reverse-blue class="mt-4 float-right" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                                     Odevzdat úkol
-                                </button-reverse>
+                                </button-reverse-blue>
                             </Form>
                         </div>
                     </div>
@@ -63,8 +61,8 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUserTag } from "@fortawesome/free-solid-svg-icons";
 import ButtonSecondary from "../../Jetstream/ButtonSecondary";
 import { Field, Form, ErrorMessage } from 'vee-validate';
-import ButtonReverse from "../../Jetstream/ButtonReverse";
 import Swal from "sweetalert2";
+import ButtonReverseBlue from "../../Jetstream/ButtonReverseBlue";
 
 library.add(faUserTag);
 
@@ -77,13 +75,13 @@ export default {
         }
     },
     components: {
+        ButtonReverseBlue,
         ButtonSecondary,
         JetValidationErrors,
         AppLayout,
         Field,
         Form,
         ErrorMessage,
-        ButtonReverse
     },
     data() {
         return {

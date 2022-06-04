@@ -15,7 +15,7 @@
                         <p class="text-black text-xl font-bold mb-4">Základní hodinové sazby:</p>
                         <basic-price-list></basic-price-list>
                     </div>
-                    <div class="mt-8">
+                    <div class="my-8">
                         <p class="text-black text-xl font-bold mb-4">Orientační slevy při předplacení (výpočet se liší dle týdnů v měsíci):</p>
                         <discount-price-list></discount-price-list>
                     </div>

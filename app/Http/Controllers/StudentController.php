@@ -17,7 +17,7 @@ class StudentController extends Controller
         return Inertia::render('Students/Index', [
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
-            'students' => UserResource::collection(User::latest()->simplePaginate(20)),
+            'students' => UserResource::collection(User::latest()->simplePaginate(50)),
             'roles' => $roles,
         ]);
     }

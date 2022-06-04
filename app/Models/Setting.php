@@ -97,6 +97,11 @@ class Setting extends Model
         return Arr::get($this->data, 'hero_third_card_text1');
     }
 
+    public function thirdCardText2(): ?string
+    {
+        return Arr::get($this->data, 'hero_third_card_text2');
+    }
+
     public function deletePreviousImage(): void
     {
         $imageName = Arr::get($this->data, 'hero_second_card_photo');
@@ -173,6 +178,21 @@ class Setting extends Model
     public function infoThirdCardText2(): ?string
     {
         return Arr::get($this->data, 'info_third_card_text2');
+    }
+
+    public function infoFourthCardTitle(): ?string
+    {
+        return Arr::get($this->data, 'info_fourth_card_title');
+    }
+
+    public function infoFourthCardText1(): ?string
+    {
+        return Arr::get($this->data, 'info_fourth_card_text1');
+    }
+
+    public function infoFourthCardText2(): ?string
+    {
+        return Arr::get($this->data, 'info_fourth_card_text2');
     }
 
     public function priceMainTitle(): ?string

@@ -95,6 +95,27 @@
                 <jet-input-error :message="form.errors.info_third_card_text2" class="mt-2" />
             </div>
 
+            <!-- 4rd card title -->
+            <div class="col-span-6 sm:col-span-6">
+                <jet-label for="infoFourthCardTitle" value="Čtvrtá karta - titulek (povinný údaj)" />
+                <jet-input id="infoFourthCardTitle" type="text" class="mt-1 block w-full" v-model="form.info_fourth_card_title"  autocomplete="infoFourthCardTitle" />
+                <jet-input-error :message="form.errors.info_fourth_card_title" class="mt-2" />
+            </div>
+
+            <!-- 4rd card title text1 -->
+            <div class="col-span-6 sm:col-span-6">
+                <jet-label for="infoFourthCardText1" value="Čtvrtá karta - text k první části (povinný údaj)" />
+                <TextArea id="infoFourthCardText1" type="text" class="mt-1 block w-full" v-model="form.info_fourth_card_text1"  autocomplete="infoFourthCardText1" />
+                <jet-input-error :message="form.errors.info_fourth_card_text1" class="mt-2" />
+            </div>
+
+            <!-- 4rd card title text2 -->
+            <div class="col-span-6 sm:col-span-6">
+                <jet-label for="infoFourthCardText2" value="Čtvrtá karta - text k druhé části (povinný údaj)" />
+                <TextArea id="infoFourthCardText2" type="text" class="mt-1 block w-full" v-model="form.info_fourth_card_text2"  autocomplete="infoFourthCardText2" />
+                <jet-input-error :message="form.errors.info_fourth_card_text2" class="mt-2" />
+            </div>
+
         </template>
 
         <template #actions>
@@ -149,6 +170,9 @@ export default defineComponent({
                 info_third_card_title: this.settings.data.info_third_card_title,
                 info_third_card_text1: this.settings.data.info_third_card_text1,
                 info_third_card_text2: this.settings.data.info_third_card_text2,
+                info_fourth_card_title: this.settings.data.info_fourth_card_title,
+                info_fourth_card_text1: this.settings.data.info_fourth_card_text1,
+                info_fourth_card_text2: this.settings.data.info_fourth_card_text2,
             }),
         }
     },

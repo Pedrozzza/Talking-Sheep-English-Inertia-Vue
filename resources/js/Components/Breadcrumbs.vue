@@ -1,7 +1,7 @@
 <template>
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <h2 class="font-semibold text-base text-gray-800 leading-tight">
         <span v-for="(item, index) in items" :key="index">
-            <Link v-if="item.url" :href="route('courses.index')">{{ item.label }}</Link>
+            <Link v-if="item.url" :href="item.url" class="hover:opacity-50">{{ item.label }}</Link>
             <span v-else class="text-gray-500">{{ item.label }}</span>
             <span v-if="index < (items.length - 1)" class="mx-2">&gt;</span>
         </span>

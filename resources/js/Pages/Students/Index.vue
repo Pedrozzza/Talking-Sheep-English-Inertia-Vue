@@ -30,7 +30,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="student in students.data" :key="student.id" class="border">
+                        <tr v-for="student in students.data" :key="student.id" class="border hover:bg-blue-100">
                             <td class="text-gray-900 px-6 py-4 whitespace-nowrap">{{ student.name }}</td>
                             <td class="text-gray-900 px-6 py-4 whitespace-nowrap">{{ student.email }}</td>
                             <td class="text-gray-900 px-6 py-4 whitespace-nowrap">

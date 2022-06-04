@@ -23,7 +23,7 @@
             </div>
 
             <div class="mt-4">
-                <Field name="message" v-slot="{ field }"   v-model="form.message" :rules="'required|min:3|max:500'" autocomplete="nope">
+                <Field name="message" v-slot="{ field }"   v-model="form.message" :rules="'required|min:3|max:1000'" autocomplete="nope">
                     <textarea v-bind="field" id="message" placeholder="Zpráva *" rows="4"  class="mt-1 block w-full placeholder-italic border border-red-900"></textarea>
                 </Field>
                 <error-message class="text-sm text-white font-extrabold" name="message"></error-message>

@@ -124,9 +124,16 @@
 
             <!-- 3rd card title text1 -->
             <div class="col-span-6 sm:col-span-6">
-                <jet-label for="thirdCardText1" value="Třetí karta - text (povinný údaj)" />
+                <jet-label for="thirdCardText1" value="Třetí karta - text k první části (povinný údaj)" />
                 <TextArea id="thirdCardText1" type="text" class="mt-1 block w-full" v-model="form.hero_third_card_text1"  autocomplete="thirdCardText1" />
                 <jet-input-error :message="form.errors.hero_third_card_text1" class="mt-2" />
+            </div>
+
+            <!-- 3rd card title text2 -->
+            <div class="col-span-6 sm:col-span-6">
+                <jet-label for="thirdCardText2" value="Třetí karta - text k druhé části (povinný údaj)" />
+                <TextArea id="thirdCardText2" type="text" class="mt-1 block w-full" v-model="form.hero_third_card_text2"  autocomplete="thirdCardText2" />
+                <jet-input-error :message="form.errors.hero_third_card_text2" class="mt-2" />
             </div>
 
         </template>
@@ -185,6 +192,7 @@ export default defineComponent({
                 hero_second_card_photo: null,
                 hero_third_card_title: this.settings.data.hero_third_card_title,
                 hero_third_card_text1: this.settings.data.hero_third_card_text1,
+                hero_third_card_text2: this.settings.data.hero_third_card_text2,
             }),
 
             photoPreview: null,
