@@ -20,6 +20,7 @@ class CourseResource extends JsonResource
             'title' => $this->title,
             'slug' => $this->slug,
             'description' => $this->description,
+            'main_description' => $this->main_description,
             'date_start' => $this->date_start,
             'date_end' => $this->date_end,
             'destination' => $this->destination,
@@ -28,6 +29,8 @@ class CourseResource extends JsonResource
             'show_button' => $this->show_button,
             'created_at_for_human' => $this->created_at->diffForHumans(),
             'users' => $this->users,
+            'url' => $this->url,
+            'images' => $this->images
         ];
     }
 }

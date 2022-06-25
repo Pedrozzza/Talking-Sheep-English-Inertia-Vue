@@ -21,9 +21,13 @@
                             <jet-input-error :message="form.errors.slug" class="mt-2" />
                         </div>
                         <div class="mt-4">
-                            <jet-label for="description" value="Popis (nepovinné)" />
+                            <jet-label for="description" value="Krátký popis na kartě (nepovinné)" />
                             <TextArea id="description" type="text" class="mt-1 block w-full" v-model="form.description"  autocomplete="description" />
                             <jet-input-error :message="form.errors.description" class="mt-2" />
+                        </div>
+                        <div class="mt-4">
+                            <jet-label for="main_description" value="Hlavní popis v detailu události (nepovinné)" />
+                            <ckeditor :editor="editor" v-model="form.main_description" :config="editorConfig"></ckeditor>
                         </div>
                         <div class="mt-4">
                             <jet-label for="dateStart" value="Začátek (nepovinné)" />
@@ -47,11 +51,17 @@
                         </div>
 
                         <div class="mt-4">
+                            <jet-label for="url" value="Odkaz na registraci (nepovinné)" />
+                            <jet-input id="url" type="text" class="mt-1 block w-full" v-model="form.url"  autocomplete="url" />
+                            <jet-input-error :message="form.errors.url" class="mt-2" />
+                        </div>
+
+                        <div class="mt-4">
                             <input type="file" class="hidden"
                                    ref="photo"
                                    @change="updatePhotoPreview">
 
-                            <jet-label for="photo" value="Fotka (nepovinné, v případě, že nebude fotka vložena, bude použita defaultní)" />
+                            <jet-label for="photo" value="Hlavní fotka (povinné)" />
 
                             <!-- New Profile Photo Preview -->
                             <div class="mt-2" v-show="photoPreview">
@@ -68,11 +78,11 @@
                         </div>
 
                         <div class="mt-4">
-                            <div class="flex items-center">
-                                <jet-checkbox id="showButton" class="mr-4" v-model="form.show_button" :checked="form.show_button"/>
-                                <jet-label for="showButton" value='Zobrazit tlačítko "MÁM ZÁJEM" u události (Registrování uživatelé se budou moci přihlásit k události)' />
-                            </div>
-                            <jet-input-error :message="form.errors.show_button" class="mt-2" />
+
+                            <jet-label for="photo" value="Fotky do galerie" class="mb-2" />
+                            <input type="file" ref="photos" multiple>
+
+                            <jet-input-error :message="form.errors.images" class="mt-2" />
                         </div>
 
                         <jet-button class="mt-4 float-right" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
@@ -100,6 +110,7 @@ import JetCheckbox from '@/Jetstream/Checkbox.vue'
 import { strSlug } from "../../helpers";
 import Swal from "sweetalert2";
 import Breadcrumbs from "../../Components/Breadcrumbs";
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 library.add(faPlus);
 
@@ -121,7 +132,7 @@ export default {
         TextArea,
         JetSecondaryButton,
         JetButton,
-        JetCheckbox
+        JetCheckbox,
     },
     data() {
         return {
@@ -129,14 +140,20 @@ export default {
                 title: '',
                 slug: '',
                 description: '',
+                main_description:'',
                 date_start: '',
                 date_end: '',
                 destination: '',
                 price: '',
                 image: '',
                 show_button: false,
+                url: '',
+                images: []
             }),
             photoPreview: null,
+            editor: ClassicEditor,
+            editorConfig: {},
+            previewImage: null
         }
     },
     computed: {
@@ -158,6 +175,10 @@ export default {
                 this.form.image = this.$refs.photo.files[0]
             }
 
+            if (this.$refs.photos) {
+                this.form.images = this.$refs.photos.files
+            }
+
             this.form.post(route('courses.store'), {
                 preserveScroll: true,
                 onSuccess: () => {
@@ -170,8 +191,6 @@ export default {
                     })
                 }
             })
-
-
         },
 
         selectNewPhoto() {

@@ -5,19 +5,19 @@
                 <h2 class="mt-16 text-4xl font-extrabold text-blue-800 text-shadow-md">Seznam aktuálních událostí</h2>
             </div>
             <div>
-                <p class="my-8 text-2xl font-bold flex justify-center">
-                    Na této strance můžes najít přehled všech aktuálních událostí. Registrovaní uživatelé se mohou také přímo přihlašovat.
+                <p class="my-8 text-xl 2xl:text-2xl font-bold flex justify-center text-center">
+                    Na této strance můžes najít přehled všech aktuálních událostí.
                 </p>
             </div>
-            <div class="flex justify-between px-2 mb-16">
-                <div class="grid grid-cols-4">
-                    <card v-for="course in courses.data" :key="course.id" class="mx-4 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 md:gap-4 xl:gap-12">
+                <card v-for="course in courses.data" :key="course.id" class="mx-4 mb-8">
+                    <Link :href="route('courses.show', course.id)">
                         <div class="flex justify-center">
                             <div class="rounded-lg shadow-lg bg-white max-w-sm">
-                                <a href="#!">
+                                <div>
                                     <img v-if="course.image" class="w-full rounded-t-lg" :src="`../../storage/courses-photos/${course.image}`" alt="" style="max-height: 185px"/>
                                     <img v-else class="w-full rounded-t-lg" :src="`../../storage/default-photo/default-photo.png`" alt="" style="max-height: 185px"/>
-                                </a>
+                                </div>
                                 <div class="p-6">
                                     <h5 class="text-blue-800 text-center text-xl font-bold mb-2">{{ course.title }}</h5>
                                     <p v-if="course.description" class="text-gray-700 text-justify text-base mb-4">
@@ -27,30 +27,32 @@
                                     <p v-if="course.destination"><strong>Místo konání:</strong> {{ course.destination }}</p>
                                     <p v-if="course.price"><strong>Cena:</strong> {{ course.price }},- Kč</p>
                                 </div>
-                                <div  v-if="course.show_button && $page.props.user" class="flex justify-center mb-6">
-                                    <course-btn :model-name="course.title" :course-id="course.id"></course-btn>
+                                <div  class="flex justify-center mb-6">
+                                    <button-secondary :href="route('courses.show', course.id)">Více info</button-secondary>
                                 </div>
                             </div>
                         </div>
-                    </card>
-                </div>
+                    </Link>
+                </card>
             </div>
         </div>
     </welcome-layout>
 </template>
 
 <script>
-import ButtonSecondary from "../Jetstream/ButtonSecondary";
+import { Link } from '@inertiajs/inertia-vue3';
 import WelcomeLayout from "../Layouts/WelcomeLayout";
 import CourseBtn from "../Components/CourseButton";
 import moment from 'moment';
+import ButtonSecondary from "../Jetstream/ButtonSecondary";
 
 export default {
     name: "Courses",
     components: {
+        ButtonSecondary,
         CourseBtn,
         WelcomeLayout,
-        ButtonSecondary
+        Link
     },
     props: {
         canLogin: Boolean,

@@ -16,13 +16,16 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
             height: {
+                '128': '32rem',
+                '116': '29rem',
                 '134': '34rem',
                 '184': '46rem',
                 '160': '40rem',
+                '180': '45rem'
             },
             width: {
                 '134': '34rem',
-                '256': '64rem'
+                '256': '64rem',
             },
             backgroundImage: {
                 'split-white-red': 'linear-gradient(to bottom, white 50%, #991b1b 50%)'
@@ -38,7 +41,8 @@ module.exports = {
             },
             colors: {
                 'logo-blue': '#3472df',
-            }
+            },
+
         },
     },
 

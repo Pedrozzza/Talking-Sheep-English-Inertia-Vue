@@ -8,7 +8,7 @@
                         <Link :href="route('welcome')">
                             <div class="flex items-center logo">
                                 <jet-application-mark class="absolute block w-auto -mt-1.5 md:mt-0 border-8 border-red-800"/>
-                                <h2 class="ml-28 mt-5 uppercase text-white text-shadow-md block md:hidden lg:block">Talking Sheep English</h2>
+                                <h2 class="ml-28 md:ml-20 2xl:ml-28 mt-5 uppercase text-xs md:text-base 2xl:text-xl text-white text-shadow-md block md:hidden lg:block">Talking Sheep English</h2>
                             </div>
                         </Link>
                     </div>

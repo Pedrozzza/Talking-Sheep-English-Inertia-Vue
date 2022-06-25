@@ -9,7 +9,7 @@
         <jet-validation-errors class="mb-4" />
         <Form @submit="submit">
             <div class="mt-4 text-white text-xl font-bold">
-                <p>Prosím pozor! Registrovat se můžeš pouze s platným <strong>registračním kódem.</strong> Nejdříve nás tedy <a class="underline hover:opacity-50" href="#">kontaktuj.</a></p>
+                <p>Prosím pozor! Registrovat se můžeš pouze s platným <strong>registračním kódem.</strong> Nejdříve nás tedy <a class="underline hover:opacity-50" href="/kontakty">kontaktuj</a></p>
             </div>
 
             <div class="mt-4">

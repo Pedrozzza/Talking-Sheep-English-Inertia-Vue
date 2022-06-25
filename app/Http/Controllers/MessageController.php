@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use Laravel\Jetstream\Jetstream;
+use TimeHunter\LaravelGoogleReCaptchaV3\Validations\GoogleReCaptchaV3ValidationRule;
 
 class MessageController extends Controller
 {
@@ -31,6 +32,7 @@ class MessageController extends Controller
             'email' => 'required|email|min:3|max:50',
             'phone_number' => 'required',
             'message' => 'required|min:3|max:1000',
+//            'gRecaptchaResponse' => [new GoogleReCaptchaV3ValidationRule('contact_us')]
         ]);
 
         Message::create($request->all());

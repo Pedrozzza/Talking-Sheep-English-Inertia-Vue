@@ -1,29 +1,32 @@
 <template>
-    <div class="h-40 md:h-52 bg-gradient-to-b from-red-900 to-red-800">
-        <div class="flex justify-around text-center">
-            <h1 class="flex justify-center text-center text-3xl md:text-6xl pt-8 md:pt-20 text-white font-bold">Chrudim a okolí naživo</h1>
-            <div class="arrow bounce mt-12">
+    <div class="h-32 md:h-28 2xl:h-52 bg-gradient-to-b from-red-900 to-red-800">
+        <div class="flex justify-around text-center md:hidden">
+            <h1 class="flex justify-center text-center text-3xl md:text-6xl pt-8 md:pt-20 text-white font-bold">Chrudim a okolí naživo. Online kdekoliv po ČR</h1>
+        </div>
+        <div class="hidden flex justify-around text-center md:flex">
+            <h1 class="flex justify-center text-center text-3xl md:text-4xl xl:text-3xl 2xl:text-6xl pt-8 2xl:pt-20 text-white font-bold">Chrudim a okolí naživo</h1>
+            <div class="arrow bounce 2xl:mt-12">
                 <a href="#tabs">
                     <img class="mx-auto" src="../../img/logo/logo_small.png" alt="Anglictina Chrudim" style="width: 40px">
-                    <p class="find-more" style="align-items:center">Více info</p>
+                    <p class="font-bold text-base 2xl:text-2xl text-white" style="align-items:center">Více info</p>
                     <font-awesome-icon :icon="['fas', 'angle-double-down']" size="lg" class="text-white" style="width: 30px"/>
                 </a>
             </div>
-            <h1 class="flex justify-center text-center text-3xl md:text-6xl pt-8 md:pt-20 text-white font-bold">Online kdekoliv po ČR</h1>
+            <h1 class="flex justify-center text-center text-3xl md:text-4xl xl:text-3xl 2xl:text-6xl pt-8 2xl:pt-20 text-white font-bold">Online kdekoliv po ČR</h1>
         </div>
     </div>
     <tabs :settings="settings"></tabs>
     <div class="bg-split-white-red flex justify-center items-center">
         <div class="container">
-            <div class="pb-8 grid grid-cols-3 gap-4">
-                <div class="p-10">
+            <div class="pb-8 grid grid-cols-1 md:grid-cols-3 2xl:gap-4">
+                <div class="hidden p-10 md:block">
                     <img class="mx-auto mt-12" src="../../img/logo/logo_bw_left2.png" alt="Anglictina Chrudim">
                 </div>
-                <div class="p-10">
+                <div class="p-4 md:p-10">
                     <contact-form :title="'V případě zájmu nebo jakýkoliv dotazů, mě neváhej kontaktovat.'"></contact-form>
                 </div>
-                <div class="p-10">
-                    <img class="mx-auto mt-12" src="../../img/logo/logo_bw_right2.png" alt="Anglictina Chrudim">
+                <div class="p-0 md:p-10">
+                    <img class="mx-auto mt-12 sheep" src="../../img/logo/logo_bw_right2.png" alt="Anglictina Chrudim">
                 </div>
             </div>
         </div>
@@ -57,11 +60,6 @@ export default {
 </script>
 
 <style scoped>
-.find-more {
-    font-size:25px;
-    color: white;
-    font-weight: 800;
-}
 
 .arrow {
     text-align: center;
@@ -81,6 +79,12 @@ export default {
     }
     60% {
         transform: translateY(-15px);
+    }
+}
+
+@media (max-width: 640px) {
+    .sheep {
+        width: 50%;
     }
 }
 </style>

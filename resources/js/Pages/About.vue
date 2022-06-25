@@ -6,7 +6,7 @@
             </div>
             <div>
                 <img :src="'../../storage/about-photos/lector.jpg'" alt="talking sheep english" class="shadow-xl rounded-xl float-left mb-4 mr-8" style="width: 556px">
-                <div class="text-xl font-bold text-justify">
+                <div class="text-base 2xl:text-xl font-bold text-center md:text-justify">
                     <p>
                         Jmenuji se Monika a mám za sebou pár let života na cestách.
                         Nejdříve jsem 2 roky žila v Anglii, konrétně v Lake District. Pak jsem si střihla ještě rok na
@@ -48,7 +48,7 @@
                 </div>
                 <div class="mb-16">
                     <img :src="'../../storage/about-photos/about.jpg'" alt="talking sheep english" class="shadow-xl rounded-xl float-right mb-4 ml-8" style="width: 521px">
-                    <div class="text-xl font-bold text-justify">
+                    <div class="text-base 2xl:text-xl font-bold text-center md:text-justify">
                         <p>
                             Nemám akademické vzdělání na výuku angličtiny. Znám spoustu lidí, co ano. Ale ačkoliv angličtině
                             dokonale rozumí, a znají perfektně všechny zákonitosti, nemají nervy na to, někoho to učit.

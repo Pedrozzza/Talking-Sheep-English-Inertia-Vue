@@ -3,15 +3,15 @@
     <div class="grid grid-cols-1 md:grid-cols-2">
         <div class="flex items-center justify-center mx-6 md:mx-20 my-16 md:my-0">
             <div class="text-center">
-                <h1 class="text-4xl md:text-5xl pb-10 font-extrabold text-blue-800 text-shadow-md">{{ settings?.data?.hero_main_title ?? 'Soukromě, v&nbsp;malý skupince, živě i po skypu.' }}</h1>
-                <h2 class="text-3xl pb-10 font-semibold">{{ settings?.data?.hero_main_subtitle ?? 'Na cesty, na zkoušky, k maturitě i do baru!' }}</h2>
-                <button-secondary href="/informace" class="text-base md:text-xl shadow-md">{{ settings?.data?.hero_main_button_title ?? 'Naučím tě English, chceš?' }} </button-secondary>
+                <h1 class="text-4xl 2xl:text-5xl pb-10 font-extrabold text-blue-800 text-shadow-md">{{ settings?.data?.hero_main_title ?? 'Soukromě, v&nbsp;malý skupince, živě i po skypu.' }}</h1>
+                <h2 class="text-3xl md:text-2xl 2xl:text-3xl pb-10 font-semibold">{{ settings?.data?.hero_main_subtitle ?? 'Na cesty, na zkoušky, k maturitě i do baru!' }}</h2>
+                <button-secondary href="/informace" class="text-base 2xl:text-xl shadow-md">{{ settings?.data?.hero_main_button_title ?? 'Naučím tě English, chceš?' }} </button-secondary>
             </div>
         </div>
-        <div class="mx-0 my-0 order-first md:order-last">
+        <div class="mx-0 my-0 order-first md:order-last md:pl-8 2xl:pl-0">
             <Carousel :autoplay="4000" :transition="1000" :wrap-around="true">
                 <slide v-for="slide in slides" :key="slide">
-                    <img :src="`storage/carousel-photos/${slide}`" alt="talking sheep english" style="width: 100%" class="h-160">
+                    <img :src="`storage/carousel-photos/${slide}`" alt="talking sheep english" style="width: 100%" class="xl:h-116 2xl:h-180">
                 </slide>
                 <template #addons>
                     <Pagination />
@@ -81,6 +81,10 @@ export default {
         opacity: 0.9;
     }
 
+}
+
+.carousel__slide {
+    padding: 0;
 }
 
 .carousel__pagination {

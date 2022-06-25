@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="tabs" class="bg-red-800 flex justify-center items-center text-center pt-2">
+        <div id="tabs" class="bg-red-800 flex justify-center items-center text-center pt-0 md:pt-2">
             <div class="container">
                 <div class="grid grid-cols-3 md:gap-4">
                     <div @click="tab1"

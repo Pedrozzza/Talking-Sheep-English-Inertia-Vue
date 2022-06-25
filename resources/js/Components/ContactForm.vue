@@ -1,9 +1,8 @@
 <template>
     <div class="px-6 py-4 bg-red-800 shadow-md overflow-hidden sm:rounded-lg border-4 border-red-900">
-
         <jet-validation-errors class="mb-4" />
         <Form @submit="submit">
-            <div class="mt-4 text-white text-xl font-bold">
+            <div class="mt-4 text-white text-base 2xl:text-xl font-bold">
                 <p>{{ title }}</p>
             </div>
 
@@ -28,7 +27,16 @@
                 </Field>
                 <error-message class="text-sm text-white font-extrabold" name="message"></error-message>
             </div>
-
+            <div class="overflow-hidden">
+                <google-re-captcha-v3
+                    v-model="form.gRecaptchaResponse"
+                    ref="captcha"
+                    :site-key="reCaptchaSiteKey"
+                    id="contact_us_id"
+                    corner
+                    action="contact_us"
+                ></google-re-captcha-v3>
+            </div>
             <div class="flex items-center justify-end mt-4">
 
                 <button-reverse class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
@@ -51,6 +59,7 @@ import JetValidationErrors from '@/Jetstream/ValidationErrors.vue'
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import { Field, Form, ErrorMessage } from 'vee-validate';
 import Swal from 'sweetalert2';
+import GoogleReCaptchaV3 from "./googlerecaptchav3/GoogleReCaptchaV3";
 
 export default defineComponent({
     props: {
@@ -72,7 +81,8 @@ export default defineComponent({
         Field,
         Form,
         ErrorMessage,
-        Swal
+        Swal,
+        GoogleReCaptchaV3
     },
     data() {
         return {
@@ -81,12 +91,15 @@ export default defineComponent({
                 email: '',
                 phone_number: '',
                 message: '',
-            })
+                gRecaptchaResponse: null,
+            }),
+            reCaptchaSiteKey: '6LcKKEsgAAAAAEwj-IOCl8udRTuS7qysTxlu7Ygm'
         }
     },
 
     methods: {
         submit() {
+
             this.form.post(this.route('apply'), {
                 onFinish: () => this.form.reset('name', 'email', 'phone_number', 'message'),
             })

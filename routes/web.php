@@ -96,6 +96,7 @@ Route::group(['middleware' => ['permission:edit web']],function () {
 });
 
 Route::post('/udalosti/{course}/pridat-uzivatele', [CourseController::class, 'addUser'])->name('courses.add-user');
+Route::get('/udalosti/{course}/', [CourseController::class, 'show'])->name('courses.show');
 
 Route::get('/informace', [InfoPageController::class, 'index'])->name('info');
 
@@ -116,5 +117,5 @@ Route::get('/udalosti', [CoursePageController::class, 'index'])->name('courses')
 Route::get('/cenik', [PriceListPageController::class, 'index'])->name('price_list');
 Route::get('/kontakty', [ContactsPageController::class, 'index'])->name('contacts');
 
-
 Route::post('/apply', [\App\Http\Controllers\MessageController::class, 'store'])->name('apply');
+

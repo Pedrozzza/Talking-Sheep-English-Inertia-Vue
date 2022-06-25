@@ -7,6 +7,9 @@ import * as ValidationRules from './validationRules';
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import LaravelPermissionToVueJS from 'laravel-permission-to-vuejs';
 import CKEditor from '@ckeditor/ckeditor5-vue';
+import CoolLightBox from 'vue-cool-lightbox'
+import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
+
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -19,6 +22,7 @@ createInertiaApp({
             .use(plugin)
             .use(LaravelPermissionToVueJS)
             .use(CKEditor)
+            .use(CoolLightBox)
             .component('font-awesome-icon', FontAwesomeIcon)
             .mixin({ methods: { route } })
             .mount(el);

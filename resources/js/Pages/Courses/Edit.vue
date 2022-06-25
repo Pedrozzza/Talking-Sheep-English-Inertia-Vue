@@ -21,9 +21,13 @@
                             <jet-input-error :message="form.errors.slug" class="mt-2" />
                         </div>
                         <div class="mt-4">
-                            <jet-label for="description" value="Popis (nepovinné)" />
+                            <jet-label for="description" value="Krátký popis na kartě (nepovinné)" />
                             <TextArea id="description" type="text" class="mt-1 block w-full" v-model="form.description"  autocomplete="description" />
                             <jet-input-error :message="form.errors.description" class="mt-2" />
+                        </div>
+                        <div class="mt-4">
+                            <jet-label for="main_description" value="Hlavní popis v detailu události (nepovinné)" />
+                            <ckeditor :editor="editor" v-model="form.main_description" :config="editorConfig"></ckeditor>
                         </div>
                         <div class="mt-4">
                             <jet-label for="dateStart" value="Začátek (nepovinné)" />
@@ -45,6 +49,13 @@
                             <jet-input id="course_price" type="number" class="mt-1 block w-full" v-model="form.price"  autocomplete="course_price" />
                             <jet-input-error :message="form.errors.price" class="mt-2" />
                         </div>
+
+                        <div class="mt-4">
+                            <jet-label for="url" value="Odkaz na registraci (nepovinné)" />
+                            <jet-input id="url" type="text" class="mt-1 block w-full" v-model="form.url"  autocomplete="url" />
+                            <jet-input-error :message="form.errors.url" class="mt-2" />
+                        </div>
+
 
                         <div class="mt-4">
                             <input type="file" class="hidden"
@@ -77,11 +88,11 @@
                         </div>
 
                         <div class="mt-4">
-                            <div class="flex items-center">
-                                <jet-checkbox id="showButton" class="mr-4" v-model="form.show_button" :checked="form.show_button === 1"/>
-                                <jet-label for="showButton" value='Zobrazit tlačítko "MÁM ZÁJEM" u události (Registrování uživatelé se budou moci přihlásit k události)' />
-                            </div>
-                            <jet-input-error :message="form.errors.show_button" class="mt-2" />
+
+                            <jet-label for="photo" value="Fotky do galerie" class="mb-2" />
+                            <input type="file" ref="photos" multiple>
+
+                            <jet-input-error :message="form.errors.images" class="mt-2" />
                         </div>
 
                         <jet-button class="mt-4 float-right" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
@@ -109,6 +120,7 @@ import JetCheckbox from '@/Jetstream/Checkbox.vue'
 import { strSlug } from "../../helpers";
 import Swal from "sweetalert2";
 import Breadcrumbs from "../../Components/Breadcrumbs";
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 library.add(faPlus);
 
@@ -139,14 +151,19 @@ export default {
                 title: this.course.data.title,
                 slug: this.course.data.slug,
                 description: this.course.data.description,
+                main_description: this.course.data.main_description,
                 date_start: this.course.data.date_start,
                 date_end: this.course.data.date_end,
                 destination: this.course.data.destination,
                 price: this.course.data.price,
                 image: this.course.data.image,
                 show_button: this.course.data.show_button,
+                url: this.course.data.url,
+                images: this.course.data.images
             }),
             photoPreview: null,
+            editor: ClassicEditor,
+            editorConfig: {},
         }
     },
     computed: {
@@ -166,6 +183,10 @@ export default {
         editCourse() {
             if (this.$refs.photo) {
                 this.form.image = this.$refs.photo.files[0]
+            }
+
+            if (this.$refs.photos) {
+                this.form.images = this.$refs.photos.files
             }
 
             this.form.post(route('courses.update', {course: this.course.data.id}), {

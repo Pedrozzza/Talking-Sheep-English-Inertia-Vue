@@ -34,11 +34,14 @@ class CourseController extends Controller
             'title' => 'required|string|max:50',
             'slug' => 'required|string|unique:courses',
             'description' => 'nullable|string|max:255',
+            'main_description' => 'nullable',
             'date_start' => 'nullable|date',
             'date_end' => 'nullable|date',
             'destination' => 'nullable|string|max:50',
             'price' => 'nullable',
-            'image' => 'nullable|image',
+            'image' => 'required|image',
+            'url' => 'nullable',
+            'images' => 'nullable'
         ]);
 
         if ($request->has('image')) {
@@ -54,20 +57,49 @@ class CourseController extends Controller
             $imageName = '';
         }
 
+        if ($request->has('images')) {
+
+            $names = [];
+
+            foreach ($request->file('images') as $item) {
+                $names [] = $itemName = (string) Str::of($item->getClientOriginalName())
+                    ->beforeLast('.')
+                    ->slug()
+                    ->append('.')
+                    ->append($item->getClientOriginalExtension());
+
+                $item->storeAs('public/course-galleries', $itemName);
+            }
+        } else {
+            $names = [];
+        }
+
         $course = new Course;
         $course->title = $request->input('title');
         $course->slug = $request->input('slug');
         $course->description = $request->input('description');
+        $course->main_description = $request->input('main_description');
         $course->date_start = $request->input('date_start');
         $course->date_end = $request->input('date_end');
         $course->destination = $request->input('destination');
         $course->price = $request->input('price');
         $course->image = $imageName;
         $course->show_button = $request->input('show_button');
+        $course->url = $request->input('url');
+        $course->images = $names;
         $course->save();
 
         return redirect()->route('courses.index');
     }
+    public function show (Course $course) {
+
+        return Inertia::render('Courses/Show', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'course' => new CourseResource($course),
+        ]);
+    }
+
 
     public function edit(Course $course) {
 
@@ -82,35 +114,59 @@ class CourseController extends Controller
             'title' => 'required|string|max:50',
             'slug' => 'required|string|unique:courses,slug,'.$course->id.'id',
             'description' => 'nullable|string|max:255',
+            'main_description' => 'nullable',
             'date_start' => 'nullable|date',
             'date_end' => 'nullable|date',
             'destination' => 'nullable|string|max:50',
             'price' => 'nullable',
             'image' => 'nullable|image',
+            'url' => 'nullable',
+            'images' => 'nullable'
         ]);
 
-        if($request->has('image')) {
+        if($request->has('image') && $request->file('image') !== null ) {
 
-            $imageName = (string) Str::of($request->file('image')->getClientOriginalName())
-                ->beforeLast('.')
-                ->slug()
-                ->append('.')
-                ->append($request->file('image')->getClientOriginalExtension());
+                $imageName = (string) Str::of($request->file('image')->getClientOriginalName())
+                    ->beforeLast('.')
+                    ->slug()
+                    ->append('.')
+                    ->append($request->file('image')->getClientOriginalExtension());
 
-            $request->file('image')->storeAs('public/courses-photos', $imageName);
+                $request->file('image')->storeAs('public/courses-photos', $imageName);
+
         } else {
             $imageName = $course->image;
+        }
+
+        if ($request->has('images') && $request->file('images') !== null ) {
+
+            $names = [];
+
+            foreach ($request->file('images') as $item) {
+                $names [] = $itemName = (string) Str::of($item->getClientOriginalName())
+                    ->beforeLast('.')
+                    ->slug()
+                    ->append('.')
+                    ->append($item->getClientOriginalExtension());
+
+                $item->storeAs('public/course-galleries', $itemName);
+            }
+        } else {
+            $names = $course->images;
         }
 
         $course->title = $request->input('title');
         $course->slug = $request->input('slug');
         $course->description = $request->input('description');
+        $course->main_description = $request->input('main_description');
         $course->date_start = $request->input('date_start');
         $course->date_end = $request->input('date_end');
         $course->destination = $request->input('destination');
         $course->price = $request->input('price');
         $course->image = $imageName;
         $course->show_button = $request->input('show_button');
+        $course->url = $request->input('url');
+        $course->images = $names;
         $course->save();
 
         return redirect()->route('courses.index');

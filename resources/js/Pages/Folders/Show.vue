@@ -9,8 +9,8 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl rounded md:rounded-lg">
                     <div class="mb-8">
-                        <div class="mb-8 p-8 flex flex-col md:flex-row md:justify-between md:items-center" :style="{'background-color': `${folder.data.color}`}">
-                            <h2 class="ml-0 mb-8 md:ml-8 md:mb-0 text-2xl font-extrabold text-white text-shadow-md">{{ folder.data.title }}</h2>
+                        <div class="mb-8 p-6 2xl:p-8 flex flex-col md:flex-row md:justify-between md:items-center" :style="{'background-color': `${folder.data.color}`}">
+                            <h2 class="ml-0 mb-8 md:ml-8 md:mb-0 text-2xl md:text-lg 2xl:text-2xl font-extrabold text-white text-shadow-md">{{ folder.data.title }}</h2>
                             <p class="mr-8 text-white text-shadow-md">Úroveň: <span class="font-bold">{{ level }}</span></p>
                         </div>
                         <div v-if="folder.data.description" class="p-6">

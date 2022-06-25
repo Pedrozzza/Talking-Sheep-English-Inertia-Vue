@@ -5,16 +5,16 @@
                 <h2 class="mt-16 text-4xl font-extrabold text-blue-800 text-shadow-md">{{ settings?.data?.info_main_title ?? 'Jak probíhá výuka?' }}</h2>
             </div>
             <div>
-                <p class="my-8 text-2xl font-bold flex justify-center">
+                <p class="my-8 text-xl 2xl:text-2xl font-bold flex justify-center text-center">
                     {{ settings?.data?.info_main_subtitle ?? 'Volba je především na tobě a tvých preferencí. S rozhodováním ti mohou pomoci následující informace rozdělené dle kategorií.' }}
                 </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 md:gap-4 xl:gap-12">
-                <card>
+            <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 md:gap-4 xl:gap-12">
+                <card class="mb-8 md:mb-0">
                     <div class="flex justify-center">
                         <div class="rounded-lg shadow-lg bg-white max-w-sm">
                             <a href="#!">
-                                <img class="rounded-t-lg" src="../../img/info_cards/card1.jpg" alt="Anglictina Chrudim"/>
+                                <img class="rounded-t-lg" src="../../img/info_cards/card1.jpg" alt="Anglictina Chrudim" style="height: 140px"/>
                             </a>
                             <div class="p-6">
                                 <h5 class="text-blue-800 text-center text-xl font-bold mb-2">{{ settings?.data?.info_first_card_title ?? 'NA ŽIVO / ONLINE' }}</h5>
@@ -27,11 +27,11 @@
                         </div>
                     </div>
                 </card>
-                <card>
+                <card class="mb-8 md:mb-0">
                     <div class="flex justify-center">
                         <div class="rounded-lg shadow-lg bg-white max-w-sm">
                             <a href="#!">
-                                <img class="rounded-t-lg" src="../../img/info_cards/card2.jpg" alt="Anglictina Chrudim"/>
+                                <img class="rounded-t-lg" src="../../img/info_cards/card2.jpg" alt="Anglictina Chrudim" style="height: 140px"/>
                             </a>
                             <div class="p-6">
                                 <h5 class="text-blue-800 text-center text-xl font-bold mb-2">{{ settings?.data?.info_second_card_title ?? 'NA POHODU / INTENZIVNĚ' }}</h5>
@@ -44,11 +44,11 @@
                         </div>
                     </div>
                 </card>
-                <card>
+                <card class="mb-8 md:mb-0">
                     <div class="flex justify-center">
                         <div class="rounded-lg shadow-lg bg-white max-w-sm">
                             <a href="#!">
-                                <img class="rounded-t-lg" src="../../img/info_cards/card3.jpg" alt="Anglictina Chrudim"/>
+                                <img class="rounded-t-lg" src="../../img/info_cards/card3.jpg" alt="Anglictina Chrudim" style="height: 140px"/>
                             </a>
                             <div class="p-6">
                                 <h5 class="text-blue-800 text-center text-xl font-bold mb-2">{{ settings?.data?.info_third_card_title ?? 'INDIVIDUÁLNĚ / VE SKUPINĚ' }}</h5>
@@ -61,11 +61,11 @@
                         </div>
                     </div>
                 </card>
-                <card>
+                <card class="mb-8 md:mb-0">
                     <div class="flex justify-center">
                         <div class="rounded-lg shadow-lg bg-white max-w-sm">
                             <a href="#!">
-                                <img class="rounded-t-lg" src="../../img/info_cards/card4.jpg" alt="Anglictina Chrudim"/>
+                                <img class="rounded-t-lg" src="../../img/info_cards/card4.jpg" alt="Anglictina Chrudim" style="height: 140px"/>
                             </a>
                             <div class="p-6">
                                 <h5 class="text-blue-800 text-center text-xl font-bold mb-2">{{ settings?.data?.info_fourth_card_title ?? 'DOSPĚLÍ / DĚTI' }}</h5>

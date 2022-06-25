@@ -13,11 +13,18 @@ class Course extends Model
         'title',
         'slug',
         'description',
+        'main_description',
         'date_start',
         'date_end',
         'destination',
         'price',
-        'image'
+        'image',
+        'url',
+        'images'
+    ];
+
+    protected $casts = [
+        'images' => 'array',
     ];
 
     public function uploadFolder(): string

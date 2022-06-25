@@ -14,63 +14,63 @@
                             <Link :href="route('welcome')">
                                 <div class="flex items-center logo">
                                     <jet-application-mark class="absolute block w-auto -mt-1.5 md:mt-0 border-8 border-blue-800"/>
-                                    <h2 class="ml-28 mt-3 uppercase text-white text-shadow-md text-base md:text-xl md:hidden lg:block">Talking Sheep English</h2>
+                                    <h2 class="ml-28 md:ml-20 2xl:ml-28 mt-3 uppercase text-white text-shadow-md text-xs text-base 2xl:text-xl md:hidden lg:block">Talking Sheep English</h2>
                                 </div>
                             </Link>
                         </div>
                         <div class="flex">
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                                     Studovna
                                 </jet-nav-link>
                             </div>
-                            <div class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('homeworks.homework-page')" :active="route().current('homeworks.homework-page')">
                                     Odevzdávárna
                                 </jet-nav-link>
                             </div>
-                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('settings.create')" :active="route().current('settings.create')">
                                     Obsah webu
                                 </jet-nav-link>
                             </div>
-                            <div v-if="can('control lessons')" class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div v-if="can('control lessons')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('courses.index')" :active="route().current('courses.index')">
                                     Události
                                 </jet-nav-link>
                             </div>
-                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('codes.index')" :active="route().current('codes.index')">
                                     Reg. kódy
                                 </jet-nav-link>
                             </div>
-                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('students.index')" :active="route().current('students.index')">
                                     Studenti
                                 </jet-nav-link>
                             </div>
-                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('homeworks.index')" :active="route().current('homeworks.index')">
                                     Úkoly
                                 </jet-nav-link>
                             </div>
-                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('folders.index')" :active="route().current('folders.index')">
                                     Kategorie
                                 </jet-nav-link>
                             </div>
-                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('posts.index')" :active="route().current('posts.index')">
                                     Lekce
                                 </jet-nav-link>
                             </div>
-                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('emails.index')" :active="route().current('emails.index')">
                                     Emaily
                                 </jet-nav-link>
                             </div>
-                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('messages.index')" :active="route().current('messages.index')">
                                     Zprávy
                                 </jet-nav-link>
