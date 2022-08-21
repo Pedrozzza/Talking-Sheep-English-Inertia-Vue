@@ -26,6 +26,9 @@
                             <jet-nav-link :href="route('about')" :active="route().current('about')">O Lektorce</jet-nav-link>
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
+                            <jet-nav-link :href="route('gallery')" :active="route().current('gallery')">Galerie</jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
                             <jet-nav-link :href="route('price_list')" :active="route().current('price_list')">Ceník</jet-nav-link>
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:mx-4 md:flex">
@@ -69,6 +72,7 @@
                 <jet-responsive-nav-link :href="route('info')" :active="route().current('info')">Informace</jet-responsive-nav-link>
                 <jet-responsive-nav-link :href="route('courses')" :active="route().current('courses')">Události</jet-responsive-nav-link>
                 <jet-responsive-nav-link :href="route('about')" :active="route().current('about')">O Lektorce</jet-responsive-nav-link>
+                <jet-responsive-nav-link :href="route('gallery')" :active="route().current('gallery')">Galerie</jet-responsive-nav-link>
                 <jet-responsive-nav-link :href="route('price_list')" :active="route().current('price_list')">Ceník</jet-responsive-nav-link>
                 <jet-responsive-nav-link :href="route('contacts')" :active="route().current('contacts')">Kontakty</jet-responsive-nav-link>
             </div>

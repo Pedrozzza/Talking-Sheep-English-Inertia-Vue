@@ -41,6 +41,11 @@
                                 </jet-nav-link>
                             </div>
                             <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
+                                <jet-nav-link :href="route('galleries.index')" :active="route().current('galleries.index')">
+                                    Galerie
+                                </jet-nav-link>
+                            </div>
+                            <div v-if="can('edit web')" class="hidden space-x-8 sm:-my-px sm:mx-1 2xl:mx-4 md:flex">
                                 <jet-nav-link :href="route('codes.index')" :active="route().current('codes.index')">
                                     Reg. kódy
                                 </jet-nav-link>
@@ -147,6 +152,9 @@
                         </jet-responsive-nav-link>
                         <jet-responsive-nav-link v-if="can('control lessons')" :href="route('courses.index')" :active="route().current('courses.index')">
                             Události
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link v-if="can('edit web')" :href="route('galleries.index')" :active="route().current('galleries.index')">
+                            Galerie
                         </jet-responsive-nav-link>
                         <jet-responsive-nav-link v-if="can('edit web')" :href="route('codes.index')" :active="route().current('codes.index')">
                             Reg. kódy

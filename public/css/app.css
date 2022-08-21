@@ -2907,6 +2907,10 @@ select {
 		gap: 9rem;
 	}
 
+	.md\:gap-8 {
+		gap: 2rem;
+	}
+
 	.md\:rounded-lg {
 		border-radius: 0.5rem;
 	}

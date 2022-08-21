@@ -7,6 +7,8 @@ use App\Http\Controllers\CodeController;
 use App\Http\Controllers\ContactsPageController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CoursePageController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\GalleryPageController;
 use App\Http\Controllers\HomeworkController;
 use App\Http\Controllers\InfoPageController;
 use App\Http\Controllers\MessageController;
@@ -75,6 +77,15 @@ Route::group(['middleware' => ['permission:edit web']],function () {
 });
 
 Route::group(['middleware' => ['permission:edit web']],function () {
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('galleries.index');
+    Route::get('/galerie/pridat', [GalleryController::class, 'create'])->name('galleries.create');
+    Route::post('/galerie', [GalleryController::class, 'store'])->name('galleries.store');
+    Route::get('/galerie/{gallery}/edit', [GalleryController::class, 'edit'])->name('galleries.edit');
+    Route::put('/galerie/{gallery}/update', [GalleryController::class, 'update'])->name('galleries.update');
+    Route::delete('/galerie/{gallery}', [GalleryController::class, 'delete'])->name('galleries.delete');
+});
+
+Route::group(['middleware' => ['permission:edit web']],function () {
     Route::get('/udalosti/nastaveni', [CourseController::class, 'index'])->name('courses.index');
     Route::get('/udalosti/pridat', [CourseController::class, 'create'])->name('courses.create');
     Route::post('/udalosti/pridat', [CourseController::class, 'store'])->name('courses.store');
@@ -113,7 +124,7 @@ Route::get('/o-lektorce', function () {
 })->name('about');
 
 Route::get('/udalosti', [CoursePageController::class, 'index'])->name('courses');
-
+Route::get('/galerie', [GalleryPageController::class, 'index'])->name('gallery');
 Route::get('/cenik', [PriceListPageController::class, 'index'])->name('price_list');
 Route::get('/kontakty', [ContactsPageController::class, 'index'])->name('contacts');
 

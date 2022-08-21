@@ -2,7 +2,13 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <meta
+            name="description"
+            content="Výuka angličtiny v Chrudimy a okolí. Angličtina online kdekoliv po ČR.
+                    Efektivním stylem. Na cesty, na zkoušky, k maturitě i do baru."
+            >
+        <meta name="keywords" content="angličtina, chrudim, jazyková škola, efektivní výuka, škola, anglicky">
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
