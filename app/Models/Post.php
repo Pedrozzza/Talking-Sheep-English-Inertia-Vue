@@ -22,6 +22,10 @@ class Post extends Model
         'file_upload3',
         'file_upload4',
         'file_homework',
+        'file_homework1',
+        'file_homework2',
+        'file_homework3',
+        'file_homework4',
         'file_conversation'
     ];
 

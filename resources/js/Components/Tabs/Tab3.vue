@@ -7,8 +7,9 @@
                     <div class="flex flex-col">
                         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                                <div class="overflow-hidden">
-                                    <basic-price-list></basic-price-list>
+                                <div class="text-black text-base md:text-xl 2xl:text-3xl font-bold mb-6 md:mb-12">
+                                    Ceny se u dětí a dospělých různí a také zaleží na počtu ve skupině.
+                                    Cena za 60 minut se pohybuje od 200 Kč až po 500 kč
                                 </div>
                             </div>
                         </div>
@@ -26,14 +27,12 @@
 </template>
 
 <script>
-import BasicPriceList from "../PriceTables/BasicPriceList";
 import { Link } from '@inertiajs/inertia-vue3';
 import ButtonSecondary from "../../Jetstream/ButtonSecondary";
 
 export default {
     name: "Tab3",
     components: {
-        BasicPriceList,
         ButtonSecondary,
         Link
     },

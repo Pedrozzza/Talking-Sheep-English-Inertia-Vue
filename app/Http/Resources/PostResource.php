@@ -29,6 +29,10 @@ class PostResource extends JsonResource
             'file_upload3' => $this->file_upload3,
             'file_upload4' => $this->file_upload4,
             'file_homework' => $this->file_homework,
+            'file_homework1' => $this->file_homework1,
+            'file_homework2' => $this->file_homework2,
+            'file_homework3' => $this->file_homework3,
+            'file_homework4' => $this->file_homework4,
             'file_conversation' => $this->file_conversation,
         ];
     }

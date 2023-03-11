@@ -41,6 +41,10 @@ class PostController extends Controller
             'file_upload1' => 'nullable',
             'file_upload2' => 'nullable',
             'file_homework' => 'nullable',
+            'file_homework1' => 'nullable',
+            'file_homework2' => 'nullable',
+            'file_homework3' => 'nullable',
+            'file_homework4' => 'nullable',
             'file_conversation' => 'nullable',
         ]);
 
@@ -110,6 +114,50 @@ class PostController extends Controller
             $fileNameToStoreH = '';
         }
 
+        if ($request->hasFile('file_homework1'))
+        {
+            $fileNameWithExt = $request->file('file_homework1')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file_homework1')->getClientOriginalExtension();
+            $fileNameToStoreH1 = $fileName . '.' . rand(1, 999) . '.' . $extension;
+            $path = $request->file('file_homework1')->storeAs('public/file_upload', $fileNameToStoreH1);
+        } else {
+            $fileNameToStoreH1 = '';
+        }
+
+        if ($request->hasFile('file_homework2'))
+        {
+            $fileNameWithExt = $request->file('file_homework2')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file_homework2')->getClientOriginalExtension();
+            $fileNameToStoreH2 = $fileName . '.' . rand(1, 999) . '.' . $extension;
+            $path = $request->file('file_homework2')->storeAs('public/file_upload', $fileNameToStoreH2);
+        } else {
+            $fileNameToStoreH2 = '';
+        }
+
+        if ($request->hasFile('file_homework3'))
+        {
+            $fileNameWithExt = $request->file('file_homework3')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file_homework3')->getClientOriginalExtension();
+            $fileNameToStoreH3 = $fileName . '.' . rand(1, 999) . '.' . $extension;
+            $path = $request->file('file_homework3')->storeAs('public/file_upload', $fileNameToStoreH3);
+        } else {
+            $fileNameToStoreH3 = '';
+        }
+
+        if ($request->hasFile('file_homework4'))
+        {
+            $fileNameWithExt = $request->file('file_homework4')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file_homework4')->getClientOriginalExtension();
+            $fileNameToStoreH4 = $fileName . '.' . rand(1, 999) . '.' . $extension;
+            $path = $request->file('file_homework4')->storeAs('public/file_upload', $fileNameToStoreH4);
+        } else {
+            $fileNameToStoreH4 = '';
+        }
+
         if ($request->hasFile('file_conversation'))
         {
             $fileNameWithExt = $request->file('file_conversation')->getClientOriginalName();
@@ -132,6 +180,10 @@ class PostController extends Controller
         $post->file_upload3 = $fileNameToStore3;
         $post->file_upload4 = $fileNameToStore4;
         $post->file_homework = $fileNameToStoreH;
+        $post->file_homework1 = $fileNameToStoreH1;
+        $post->file_homework2 = $fileNameToStoreH2;
+        $post->file_homework3 = $fileNameToStoreH3;
+        $post->file_homework4 = $fileNameToStoreH4;
         $post->file_conversation = $fileNameToStoreC;
         $post->color = $request->input('color');
         $post->save();
@@ -160,6 +212,10 @@ class PostController extends Controller
             'file_upload1' => 'nullable',
             'file_upload2' => 'nullable',
             'file_homework' => 'nullable',
+            'file_homework1' => 'nullable',
+            'file_homework2' => 'nullable',
+            'file_homework3' => 'nullable',
+            'file_homework4' => 'nullable',
             'file_conversation' => 'nullable',
         ]);
 
@@ -227,6 +283,50 @@ class PostController extends Controller
             $path = $request->file('file_homework')->storeAs('public/file_upload', $fileNameToStoreH);
         } else {
             $fileNameToStoreH = '';
+        }
+
+        if ($request->hasFile('file_homework1'))
+        {
+            $fileNameWithExt = $request->file('file_homework1')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file_homework1')->getClientOriginalExtension();
+            $fileNameToStoreH1 = $fileName . '.' . rand(1, 999) . '.' . $extension;
+            $path = $request->file('file_homework1')->storeAs('public/file_upload', $fileNameToStoreH1);
+        } else {
+            $fileNameToStoreH1 = '';
+        }
+
+        if ($request->hasFile('file_homework2'))
+        {
+            $fileNameWithExt = $request->file('file_homework2')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file_homework2')->getClientOriginalExtension();
+            $fileNameToStoreH2 = $fileName . '.' . rand(1, 999) . '.' . $extension;
+            $path = $request->file('file_homework2')->storeAs('public/file_upload', $fileNameToStoreH2);
+        } else {
+            $fileNameToStoreH2 = '';
+        }
+
+        if ($request->hasFile('file_homework3'))
+        {
+            $fileNameWithExt = $request->file('file_homework3')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file_homework3')->getClientOriginalExtension();
+            $fileNameToStoreH3 = $fileName . '.' . rand(1, 999) . '.' . $extension;
+            $path = $request->file('file_homework3')->storeAs('public/file_upload', $fileNameToStoreH3);
+        } else {
+            $fileNameToStoreH3 = '';
+        }
+
+        if ($request->hasFile('file_homework4'))
+        {
+            $fileNameWithExt = $request->file('file_homework4')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file_homework4')->getClientOriginalExtension();
+            $fileNameToStoreH4 = $fileName . '.' . rand(1, 999) . '.' . $extension;
+            $path = $request->file('file_homework4')->storeAs('public/file_upload', $fileNameToStoreH4);
+        } else {
+            $fileNameToStoreH4 = '';
         }
 
         if ($request->hasFile('file_conversation'))
@@ -268,6 +368,22 @@ class PostController extends Controller
             Storage::delete('public/file_upload/' . $post->file_homework);
             $post->file_homework = $fileNameToStoreH;
         }
+        if($request->hasFile('file_homework1')){
+            Storage::delete('public/file_upload/' . $post->file_homework1);
+            $post->file_homework1 = $fileNameToStoreH1;
+        }
+        if($request->hasFile('file_homework2')){
+            Storage::delete('public/file_upload/' . $post->file_homework2);
+            $post->file_homework2 = $fileNameToStoreH2;
+        }
+        if($request->hasFile('file_homework3')){
+            Storage::delete('public/file_upload/' . $post->file_homework3);
+            $post->file_homework3 = $fileNameToStoreH3;
+        }
+        if($request->hasFile('file_homework4')){
+            Storage::delete('public/file_upload/' . $post->file_homework4);
+            $post->file_homework4 = $fileNameToStoreH4;
+        }
         if($request->hasFile('file_conversation')){
             Storage::delete('public/file_upload/' . $post->file_conversation);
             $post->file_conversation = $fileNameToStoreC;
@@ -299,6 +415,18 @@ class PostController extends Controller
         if ($post->file_homework) {
             Storage::delete('public/file_upload/' . $post->file_homework);
         }
+        if ($post->file_homework1) {
+            Storage::delete('public/file_upload/' . $post->file_homework1);
+        }
+        if ($post->file_homework2) {
+            Storage::delete('public/file_upload/' . $post->file_homework2);
+        }
+        if ($post->file_homework3) {
+            Storage::delete('public/file_upload/' . $post->file_homework3);
+        }
+        if ($post->file_homework4) {
+            Storage::delete('public/file_upload/' . $post->file_homework4);
+        }
         if ($post->file_conversation) {
             Storage::delete('public/file_upload/' . $post->file_conversation);
         }
@@ -326,6 +454,18 @@ class PostController extends Controller
         }
         if ($post->file_homework) {
             Storage::delete('public/file_upload/' . $post->file_homework);
+        }
+        if ($post->file_homework1) {
+            Storage::delete('public/file_upload/' . $post->file_homework1);
+        }
+        if ($post->file_homework2) {
+            Storage::delete('public/file_upload/' . $post->file_homework2);
+        }
+        if ($post->file_homework3) {
+            Storage::delete('public/file_upload/' . $post->file_homework3);
+        }
+        if ($post->file_homework4) {
+            Storage::delete('public/file_upload/' . $post->file_homework4);
         }
         if ($post->file_conversation) {
             Storage::delete('public/file_upload/' . $post->file_conversation);

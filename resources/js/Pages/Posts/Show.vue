@@ -57,9 +57,37 @@
                             </div>
                             <div>
                                 <p v-if="post.data.file_homework" class="my-4">Úkol:</p>
-                                <div v-if="post.data.file_homework" class="file-button">
+                                <div v-if="post.data.file_homework" class="file-button my-8">
                                     <a :href="`/storage/file_upload/${post.data.file_homework}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
-                                        Úkol
+                                        Úkol č.1
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+
+                                <div v-if="post.data.file_homework1" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_homework1}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Úkol č.2
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+
+                                <div v-if="post.data.file_homework2" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_homework2}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Úkol č.3
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+
+                                <div v-if="post.data.file_homework3" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_homework3}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Úkol č.4
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+
+                                <div v-if="post.data.file_homework4" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_homework4}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Úkol č.5
                                         <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
                                     </a>
                                 </div>

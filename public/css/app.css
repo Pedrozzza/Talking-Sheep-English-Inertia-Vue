@@ -1206,6 +1206,10 @@ select {
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 }
+.my-6 {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
 .ml-3 {
 	margin-left: 0.75rem;
 }
@@ -2827,6 +2831,10 @@ select {
 		margin-bottom: 3rem;
 	}
 
+	.md\:mt-20 {
+		margin-top: 5rem;
+	}
+
 	.md\:ml-8 {
 		margin-left: 2rem;
 	}
@@ -2903,12 +2911,12 @@ select {
 		gap: 0.75rem;
 	}
 
-	.md\:gap-36 {
-		gap: 9rem;
-	}
-
 	.md\:gap-8 {
 		gap: 2rem;
+	}
+
+	.md\:gap-36 {
+		gap: 9rem;
 	}
 
 	.md\:rounded-lg {
