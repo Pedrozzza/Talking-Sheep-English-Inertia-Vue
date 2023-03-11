@@ -54,6 +54,36 @@
                                         <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
                                     </a>
                                 </div>
+                                <div v-if="post.data.file_upload5" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_upload5}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Soubor č.6
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+                                <div v-if="post.data.file_upload6" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_upload6}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Soubor č.7
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+                                <div v-if="post.data.file_upload7" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_upload7}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Soubor č.8
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+                                <div v-if="post.data.file_upload8" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_upload8}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Soubor č.9
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+                                <div v-if="post.data.file_upload9" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_upload9}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Soubor č.10
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
                             </div>
                             <div>
                                 <p v-if="post.data.file_homework" class="my-4">Úkol:</p>
@@ -88,6 +118,36 @@
                                 <div v-if="post.data.file_homework4" class="file-button my-8">
                                     <a :href="`/storage/file_upload/${post.data.file_homework4}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
                                         Úkol č.5
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+                                <div v-if="post.data.file_homework5" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_homework5}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Úkol č.6
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+                                <div v-if="post.data.file_homework6" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_homework6}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Úkol č.7
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+                                <div v-if="post.data.file_homework7" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_homework7}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Úkol č.8
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+                                <div v-if="post.data.file_homework8" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_homework8}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Úkol č.9
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+                                <div v-if="post.data.file_homework9" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_homework9}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        Úkol č.10
                                         <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
                                     </a>
                                 </div>

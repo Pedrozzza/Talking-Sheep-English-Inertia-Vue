@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <jet-label for="file_upload" value="Soubory k lekcím (nahrát lze maximálně 5 souborů)" />
+                            <jet-label for="file_upload" value="Soubory k lekcím (nahrát lze maximálně 10 souborů)" />
                             <jet-input name="file_upload" id="file_upload" type="file" ref="fileUpload" @change="selectFile" class="
                                     mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
                             <jet-input-error :message="form.errors.file_upload" class="mt-2" />
@@ -67,10 +67,25 @@
                             <jet-input name="file_upload4" id="file_upload4" type="file" ref="fileUpload4" @change="selectFile4" class="
                                     mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
                             <jet-input-error :message="form.errors.file_upload4" class="mt-2" />
+                            <jet-input name="file_upload5" id="file_upload5" type="file" ref="fileUpload5" @change="selectFile5" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_upload5" class="mt-2" />
+                            <jet-input name="file_upload6" id="file_upload6" type="file" ref="fileUpload6" @change="selectFile6" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_upload6" class="mt-2" />
+                            <jet-input name="file_upload7" id="file_upload7" type="file" ref="fileUpload7" @change="selectFile7" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_upload7" class="mt-2" />
+                            <jet-input name="file_upload8" id="file_upload8" type="file" ref="fileUpload8" @change="selectFile8" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_upload8" class="mt-2" />
+                            <jet-input name="file_upload9" id="file_upload9" type="file" ref="fileUpload9" @change="selectFile9" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_upload9" class="mt-2" />
                         </div>
                         <hr class="my-4"/>
                         <div class="mt-4">
-                            <jet-label for="file_homework" value="Soubory - domácí úkoly (nahrát lze maximálně 5 souborů)" />
+                            <jet-label for="file_homework" value="Soubory - domácí úkoly (nahrát lze maximálně 10 souborů)" />
                             <jet-input name="file_homework" id="file_homework" type="file" ref="fileHomework" @change="selectFileHomework" class="
                                     mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
                             <jet-input-error :message="form.errors.file_homework" class="mt-2" />
@@ -90,6 +105,21 @@
                             <jet-input name="file_homework4" id="file_homework4" type="file" ref="fileHomework4" @change="selectFileHomework4" class="
                                     mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
                             <jet-input-error :message="form.errors.file_homework4" class="mt-2" />
+                            <jet-input name="file_homework5" id="file_homework5" type="file" ref="fileHomework5" @change="selectFileHomework5" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_homework5" class="mt-2" />
+                            <jet-input name="file_homework6" id="file_homework6" type="file" ref="fileHomework6" @change="selectFileHomework6" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_homework6" class="mt-2" />
+                            <jet-input name="file_homework7" id="file_homework7" type="file" ref="fileHomework7" @change="selectFileHomework7" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_homework7" class="mt-2" />
+                            <jet-input name="file_homework8" id="file_homework8" type="file" ref="fileHomework8" @change="selectFileHomework8" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_homework8" class="mt-2" />
+                            <jet-input name="file_homework9" id="file_homework9" type="file" ref="fileHomework9" @change="selectFileHomework9" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_homework9" class="mt-2" />
                         </div>
                         <hr class="my-4"/>
                         <div class="mt-4">
@@ -151,11 +181,21 @@ export default {
                 file_upload2: '',
                 file_upload3: '',
                 file_upload4: '',
+                file_upload5: '',
+                file_upload6: '',
+                file_upload7: '',
+                file_upload8: '',
+                file_upload9: '',
                 file_homework: '',
                 file_homework1: '',
                 file_homework2: '',
                 file_homework3: '',
                 file_homework4: '',
+                file_homework5: '',
+                file_homework6: '',
+                file_homework7: '',
+                file_homework8: '',
+                file_homework9: '',
                 file_conversation: '',
             }),
             photoPreview: null,
@@ -209,6 +249,21 @@ export default {
         selectFile4(event) {
             this.form.file_upload4 = event.target.files[0];
         },
+        selectFile5(event) {
+            this.form.file_upload5 = event.target.files[0];
+        },
+        selectFile6(event) {
+            this.form.file_upload6 = event.target.files[0];
+        },
+        selectFile7(event) {
+            this.form.file_upload7 = event.target.files[0];
+        },
+        selectFile8(event) {
+            this.form.file_upload8 = event.target.files[0];
+        },
+        selectFile9(event) {
+            this.form.file_upload9 = event.target.files[0];
+        },
         selectFileHomework(event) {
             this.form.file_homework = event.target.files[0];
         },
@@ -223,6 +278,21 @@ export default {
         },
         selectFileHomework4(event) {
             this.form.file_homework4 = event.target.files[0];
+        },
+        selectFileHomework5(event) {
+            this.form.file_homework5 = event.target.files[0];
+        },
+        selectFileHomework6(event) {
+            this.form.file_homework6 = event.target.files[0];
+        },
+        selectFileHomework7(event) {
+            this.form.file_homework7 = event.target.files[0];
+        },
+        selectFileHomework8(event) {
+            this.form.file_homework8 = event.target.files[0];
+        },
+        selectFileHomework9(event) {
+            this.form.file_homework9 = event.target.files[0];
         },
         selectFileConversation(event) {
             this.form.file_conversation = event.target.files[0];

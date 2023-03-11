@@ -21,11 +21,21 @@ class Post extends Model
         'file_upload2',
         'file_upload3',
         'file_upload4',
+        'file_upload5',
+        'file_upload6',
+        'file_upload7',
+        'file_upload8',
+        'file_upload9',
         'file_homework',
         'file_homework1',
         'file_homework2',
         'file_homework3',
         'file_homework4',
+        'file_homework5',
+        'file_homework6',
+        'file_homework7',
+        'file_homework8',
+        'file_homework9',
         'file_conversation'
     ];
 
