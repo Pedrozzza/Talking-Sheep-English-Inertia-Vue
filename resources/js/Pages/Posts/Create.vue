@@ -128,6 +128,12 @@
                                     mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
                             <jet-input-error :message="form.errors.file_conversation" class="mt-2" />
                         </div>
+                        <div class="mt-4">
+                            <jet-label for="file_goldlist" value="Soubor - GOLDLIST" />
+                            <jet-input name="file_goldlist" id="file_goldlist" type="file" ref="fileGoldlist" @change="selectFileGoldlist" class="
+                                    mt-4 form-control block text-base font-normal text-gray-700 bg-white bg-clip-padding transition ease-in-out focus:outline-none" style="box-shadow: none"/>
+                            <jet-input-error :message="form.errors.file_goldlist" class="mt-2" />
+                        </div>
 
                         <jet-button class="mt-4 float-right" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                             Přidat lekci
@@ -197,6 +203,7 @@ export default {
                 file_homework8: '',
                 file_homework9: '',
                 file_conversation: '',
+                file_goldlist: '',
             }),
             photoPreview: null,
             editor: ClassicEditor,
@@ -296,6 +303,9 @@ export default {
         },
         selectFileConversation(event) {
             this.form.file_conversation = event.target.files[0];
+        },
+        selectFileGoldlist(event) {
+            this.form.file_goldlist = event.target.files[0];
         }
     },
 }

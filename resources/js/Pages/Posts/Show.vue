@@ -21,7 +21,7 @@
                     <hr class="my-2"/>
                     <div class="p-6">
                         <p class="text-xl font-bold">Soubory ke stažení:</p>
-                        <div class="grid grid-cols-1 md:grid-cols-3">
+                        <div class="grid grid-cols-1 md:grid-cols-4">
                             <div>
                                 <p class="my-4">Lekce:</p>
                                 <div v-if="post.data.file_upload" class="file-button my-8">
@@ -154,9 +154,18 @@
                             </div>
                             <div>
                                 <p v-if="post.data.file_conversation" class="my-4">Konverzace:</p>
-                                <div v-if="post.data.file_conversation" class="file-button">
+                                <div v-if="post.data.file_conversation" class="file-button my-8">
                                     <a :href="`/storage/file_upload/${post.data.file_conversation}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
                                         Konverzace
+                                        <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <p v-if="post.data.file_goldlist" class="my-4">GOLDLIST:</p>
+                                <div v-if="post.data.file_goldlist" class="file-button my-8">
+                                    <a :href="`/storage/file_upload/${post.data.file_goldlist}`" class="rounded-full px-4 py-2 font-bold text-white" target="_blank" :style="{'background-color': `${post.data.color}`}">
+                                        GOLDLIST
                                         <font-awesome-icon :icon="['fas', 'download']" class="ml-2 text-white"/>
                                     </a>
                                 </div>

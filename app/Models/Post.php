@@ -36,7 +36,8 @@ class Post extends Model
         'file_homework7',
         'file_homework8',
         'file_homework9',
-        'file_conversation'
+        'file_conversation',
+        'file_goldlist'
     ];
 
     public function folder():BelongsTo

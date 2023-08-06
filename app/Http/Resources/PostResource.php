@@ -44,6 +44,7 @@ class PostResource extends JsonResource
             'file_homework8' => $this->file_homework8,
             'file_homework9' => $this->file_homework9,
             'file_conversation' => $this->file_conversation,
+            'file_goldlist' => $this->file_goldlist
         ];
     }
 }

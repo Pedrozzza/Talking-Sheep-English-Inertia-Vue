@@ -58,6 +58,7 @@ class PostController extends Controller
             'file_homework8' => 'nullable',
             'file_homework9' => 'nullable',
             'file_conversation' => 'nullable',
+            'file_goldlist' => 'nullable',
         ]);
 
         if ($request->hasFile('file_upload'))
@@ -291,6 +292,17 @@ class PostController extends Controller
             $fileNameToStoreC = '';
         }
 
+        if ($request->hasFile('file_goldlist'))
+        {
+            $fileNameWithExt = $request->file('file_goldlist')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file_goldlist')->getClientOriginalExtension();
+            $fileNameToStoreG = $fileName . '.' . rand(1, 999) . '.' . $extension;
+            $path = $request->file('file_goldlist')->storeAs('public/file_upload', $fileNameToStoreG);
+        } else {
+            $fileNameToStoreG = '';
+        }
+
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
@@ -317,6 +329,7 @@ class PostController extends Controller
         $post->file_homework8 = $fileNameToStoreH8;
         $post->file_homework9 = $fileNameToStoreH9;
         $post->file_conversation = $fileNameToStoreC;
+        $post->file_goldlist = $fileNameToStoreG;
         $post->color = $request->input('color');
         $post->save();
 
@@ -361,6 +374,7 @@ class PostController extends Controller
             'file_homework8' => 'nullable',
             'file_homework9' => 'nullable',
             'file_conversation' => 'nullable',
+            'file_goldlist' => 'nullable'
         ]);
 
         if ($request->hasFile('file_upload'))
@@ -592,6 +606,17 @@ class PostController extends Controller
             $path = $request->file('file_conversation')->storeAs('public/file_upload', $fileNameToStoreC);
         } else {
             $fileNameToStoreC = '';
+        }
+
+        if ($request->hasFile('file_goldlist'))
+        {
+            $fileNameWithExt = $request->file('file_goldlist')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file_goldlist')->getClientOriginalExtension();
+            $fileNameToStoreG = $fileName . '.' . rand(1, 999) . '.' . $extension;
+            $path = $request->file('file_goldlist')->storeAs('public/file_upload', $fileNameToStoreG);
+        } else {
+            $fileNameToStoreG = '';
         }
 
         $post->title = $request->input('title');
@@ -682,6 +707,10 @@ class PostController extends Controller
             Storage::delete('public/file_upload/' . $post->file_conversation);
             $post->file_conversation = $fileNameToStoreC;
         }
+        if($request->hasFile('file_goldlist')){
+            Storage::delete('public/file_upload/' . $post->file_goldlist);
+            $post->file_goldlist = $fileNameToStoreG;
+        }
         $post->color = $request->input('color');
         $post->save();
 
@@ -754,6 +783,9 @@ class PostController extends Controller
         if ($post->file_conversation) {
             Storage::delete('public/file_upload/' . $post->file_conversation);
         }
+        if ($post->file_goldlist) {
+            Storage::delete('public/file_upload/' . $post->file_goldlist);
+        }
 
         $post->delete();
 
@@ -823,6 +855,9 @@ class PostController extends Controller
         }
         if ($post->file_conversation) {
             Storage::delete('public/file_upload/' . $post->file_conversation);
+        }
+        if ($post->file_goldlist) {
+            Storage::delete('public/file_upload/' . $post->file_goldlist);
         }
 
         $post->delete();
